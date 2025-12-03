@@ -1,0 +1,42 @@
+{
+  "nivel_evaluado": "B2",
+  "puntuacion_global": 55,
+  "competencias": {
+    "respeto_consigna": 15,
+    "correccion_linguistica": 12,
+    "riqueza_lengua": 13,
+    "organizacion_coherencia": 15
+  },
+  "puntos_fuertes": [
+    "El estudiante ha comprendido la naturaleza de la solicitud (demanda de congé) y ha intentado redactar una carta formal.",
+    "Se menciona la duración de la formación y su relevancia para el trabajo.",
+    "Se proponen soluciones para la ausencia (trabajo los otros días, ayuda de Marie).",
+    "La estructura básica de una carta (saludo, cuerpo, despedida) está presente."
+  ],
+  "areas_mejora": [
+    "Corrección gramatical y sintáctica significativa que afecta la claridad y la corrección del texto.",
+    "Vocabulario limitado y uso impreciso de ciertas expresiones.",
+    "Estructuras de frases a menudo demasiado simples o incorrectas.",
+    "Falta de fluidez y naturalidad en la expresión.",
+    "La adecuación del registro formal podría mejorarse con un vocabulario más preciso."
+  ],
+  "errores_frecuentes": [
+    "Error en la conjugación y uso de verbos: 'Je vous écrit' (devrait être 'écris'), 'Mon français est pas bon' (devrait être 'n'est pas bon'), 'je veut bien parler' (devrait être 'veux'), 'je sait que je doit être là' (devrait être 'sais', 'dois'), 'elle fait mon travail' (peut-être 'fera' ou 'pourra faire' selon le contexte).",
+    "Uso incorrecto de preposiciones y pronombres: 'beaucoup de clients parle français' (devrait être 'parlent'), 'parler avec il' (devrait être 'eux'), 'pour elle fait mon travail' (structure incorrecte, 'pour qu'elle fasse' ou 'pour la raison qu'elle fera').",
+    "Omisión o uso incorrecto de negaciones: 'pas bon' (manque 'ne...pas').",
+    "Errores de concordancia: 'beaucoup de clients parle' (devrait être 'parlent').",
+    "Vocabulario impreciso o infantil: 'apprendre le français mieux' (devrait être 'améliorer mon français' ou 'perfectionner mes connaissances en français'), 'très important' (sans article).",
+    "Puntuación a veces ausente o incorrecta."
+  ],
+  "recomendaciones": [
+    "Revisar y practicar las conjugaciones verbales regulares e irregulares, especialmente los verbos comunes y el modo indicativo.",
+    "Estudiar las reglas de concordancia entre el sujeto y el verbo.",
+    "Trabajar en el uso correcto de las preposiciones (avec, pour, de, etc.) y los pronombres personales (sujeto, complemento).",
+    "Prestar atención a la estructura de la negación 'ne...pas'.",
+    "Ampliar el vocabulario relacionado con el ámbito profesional y las solicitudes formales (e.g., 'perfectionner', 'souhaiter', 'autorisation', 'flexibilité').",
+    "Practicar la redacción de textos formales (cartas, correos electrónicos) para familiarizarse con el registro y las fórmulas apropiadas.",
+    "Tomar notas sobre las correcciones y repasar los puntos de gramática que han generado errores."
+  ],
+  "nivel_alcanzado": "A2+",
+  "siguiente_paso": "Consolidar los fundamentos gramaticales y sintácticos propios del nivel A2 y comenzar a introducir estructuras y vocabulario del nivel B1, enfocándose en la corrección y la precisión."
+}

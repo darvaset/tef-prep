@@ -1,0 +1,22 @@
+{
+  "test_name": "Evaluation Exemple B2 - Lettre Formelle",
+  "student_profile": {
+    "niveau_actuel": "B1+",
+    "niveau_objectif": "B2",
+    "langue_maternelle": "espagnol",
+    "temps_etude_hebdomadaire": "6 heures"
+  },
+  "evaluation_criteria": {
+    "type_texte": "lettre formelle",
+    "longueur_minimale": 180,
+    "longueur_maximale": 220,
+    "registre_requis": "formel",
+    "elements_obligatoires": [
+      "formule d'appel",
+      "objet de la demande",
+      "justification",
+      "proposition pratique",
+      "formule de politesse"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "nivel_evaluado": "B2",
+  "puntuacion_global": 85,
+  "competencias": {
+    "respeto_consigna": 23,
+    "correccion_linguistica": 22,
+    "riqueza_lengua": 18,
+    "organizacion_coherencia": 22
+  },
+  "puntos_fuertes": [
+    "Excelente dominio de la estructura de una carta formal y del registro de lengua apropiado.",
+    "Alta corrección gramatical y ortográfica, sin errores significativos que dificulten la comprensión.",
+    "Argumentación clara, lógica y persuasiva, con una progresión de ideas muy coherente.",
+    "Uso correcto y efectivo de conectores lógicos ('afin de', 'Depuis', 'c'est pourquoi').",
+    "Iniciativa para proponer soluciones a los posibles inconvenientes ('je propose de réorganiser...'), lo que demuestra madurez comunicativa."
+  ],
+  "areas_mejora": [
+    "La riqueza léxica, aunque apropiada, podría ampliarse para demostrar un vocabulario más extenso y evitar repeticiones. Por ejemplo, se podría usar 'perfectionner' en lugar de 'améliorer'.",
+    "La complejidad de las estructuras sintácticas es correcta para un nivel B1/B2, pero podría ser mayor para demostrar un dominio superior. Las frases son efectivas pero relativamente directas."
+  ],
+  "errores_frecuentes": [
+    "No se identifican errores recurrentes en este texto. La calidad lingüística es consistentemente alta, lo cual es un gran punto fuerte."
+  ],
+  "recomendaciones": [
+    "Para enriquecer el vocabulario, practicar el uso de sinónimos en contextos profesionales. Por ejemplo, en lugar de 'améliorer mes compétences', se podría usar 'perfectionner ma maîtrise' o 'consolider mes acquis'.",
+    "Intentar construir frases más complejas, uniendo ideas con una mayor variedad de nexos y proposiciones subordinadas (ej. concesión con 'bien que', o el uso del subjuntivo).",
+    "Leer correspondencia profesional auténtica en francés para asimilar estructuras y léxico de un nivel superior (C1) y aplicarlos en la escritura."
+  ],
+  "nivel_alcanzado": "B2",
+  "siguiente_paso": "Consolidar el nivel B2 trabajando la riqueza léxica y la complejidad sintáctica para aspirar al nivel C1. El objetivo es pasar de una comunicación eficaz y correcta a una comunicación más matizada, precisa y elegante."
+}

@@ -1,0 +1,83 @@
+# TEF Preparation System - .gitignore
+
+# Environment variables y configuración sensible
+.env
+config/.env
+*.env
+
+# API Keys y secretos
+**/api_keys.json
+**/secrets.json
+
+# Logs del sistema
+logs/*.log
+logs/**/*.log
+
+# Archivos temporales de agentes
+agents/**/temp/
+agents/**/cache/
+
+# Outputs generados por el sistema
+#outputs/feedback/*.json
+#outputs/study_plans/*.json  
+#outputs/resources/*.json
+#outputs/**/*.pdf
+
+# Inputs de estudiantes (privacidad)
+#inputs/student_writings/*.txt
+#inputs/student_writings/*.docx
+#!inputs/student_writings/exemple_*.txt
+
+# Cache de modelos y descargas
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Knowledge base con contenido propietario
+agents/tef-knowledge-base/exams/*.pdf
+agents/tef-knowledge-base/guides/*.pdf
+!agents/tef-knowledge-base/examples/
+
+# Backup y archivos temporales
+*.bak
+*.tmp
+*.backup
