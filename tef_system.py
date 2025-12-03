@@ -16,10 +16,15 @@ import sys
 import os
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde config/.env
+load_dotenv(dotenv_path=Path('config/.env'))
 
 # Integración del nuevo agente
 from agents.tef_writing_validator import TEFWritingValidator
 from agents.tef_resource_researcher import TEFResourceResearcher
+from agents.tef_improvement_advisor import TEFImprovementAdvisor
 
 
 class TEFSystem:
@@ -250,6 +255,64 @@ class TEFSystem:
         except Exception as e:
             print(f"❌ Error inesperado en el flujo de investigación: {str(e)}")
             return {"status": "error", "message": f"Error inesperado: {str(e)}"}
+
+    def improve_plan(self, feedback_file):
+        """Genera un plan de mejora a partir de un archivo de feedback"""
+        print(f"🚀 Iniciando generación de plan de mejora...")
+        print(f"   📄 Archivo de feedback: {feedback_file}")
+
+        # 1. Validar archivo de feedback
+        if not self.validate_input_file(feedback_file):
+            return {"status": "error", "message": "Archivo de feedback inválido"}
+
+        try:
+            # 2. Cargar configuración del agente
+            agent_config = self.config["agents"]["tef-improvement-advisor"]
+            if not agent_config.get("enabled", False):
+                msg = "El agente TEF Improvement Advisor está deshabilitado."
+                print(f"⚠️  {msg}")
+                return {"status": "disabled", "message": msg}
+
+            # 3. Leer contenido del feedback
+            with open(feedback_file, 'r', encoding='utf-8') as f:
+                feedback_data = json.load(f)
+
+            # 4. Instanciar y ejecutar el agente
+            print("   🤖 Ejecutando TEF Improvement Advisor...")
+            advisor = TEFImprovementAdvisor(config=agent_config)
+            result = advisor.generate_plan(feedback_data)
+
+            if result.get("status") == "error":
+                print(f"   ❌ Error al generar el plan: {result.get('message')}")
+                return result
+
+            # 5. Guardar el plan generado
+            plan_content = result.get("plan", "")
+            
+            # Usar el nombre base del archivo de feedback para el plan
+            base_name = Path(feedback_file).stem.replace("feedback_", "")
+            output_filename = f"{base_name}_study_plan.md"
+            output_file = self.outputs_path / "study_plans" / output_filename
+            
+            output_file.parent.mkdir(parents=True, exist_ok=True)
+            
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write(plan_content)
+
+            print(f"   ✅ Plan de estudio generado.")
+            print(f"   💾 Guardado en: {output_file}")
+            
+            return {"status": "success", "plan_file": str(output_file)}
+
+        except KeyError:
+            msg = "Configuración para 'tef-improvement-advisor' no encontrada."
+            print(f"❌ Error: {msg}")
+            return {"status": "error", "message": msg}
+        except json.JSONDecodeError:
+            return {"status": "error", "message": f"Error: El archivo de feedback '{feedback_file}' no es un JSON válido."}
+        except Exception as e:
+            print(f"❌ Error inesperado en el flujo de mejora: {str(e)}")
+            return {"status": "error", "message": f"Error inesperado: {str(e)}"}
     
     def display_status(self):
         """Muestra el estado completo del sistema"""
@@ -311,6 +374,7 @@ def main():
 Ejemplos de uso:
   python tef_system.py status
   python tef_system.py evaluate --input inputs/student_writings/example.txt --level B2
+  python tef_system.py improve --feedback outputs/feedback/20251202_feedback.json
   python tef_system.py complete-evaluation --input example.txt --student-level B1 --target-level B2
   python tef_system.py research --topic "subjonctif" --level B2
         """
@@ -350,6 +414,11 @@ Ejemplos de uso:
                                 help="Nivel TEF objetivo (A1-C2)")
     research_parser.add_argument("--competency", default="writing",
                                 help="Competencia específica (writing, reading, listening, speaking)")
+
+    # Comando: improve
+    improve_parser = subparsers.add_parser("improve", help="Generar plan de mejora desde feedback")
+    improve_parser.add_argument("--feedback", required=True,
+                                help="Ruta al archivo JSON de feedback")
     
     # Parsear argumentos
     args = parser.parse_args()
@@ -388,6 +457,11 @@ Ejemplos de uso:
         elif args.command == "research":
             result = tef_system.research_resources(args.topic, args.level, args.competency)
             print("\n📋 Resultado de Investigación:")
+            print(json.dumps(result, indent=2, ensure_ascii=False))
+
+        elif args.command == "improve":
+            result = tef_system.improve_plan(args.feedback)
+            print("\n📋 Resultado del Plan de Mejora:")
             print(json.dumps(result, indent=2, ensure_ascii=False))
         
     except Exception as e:

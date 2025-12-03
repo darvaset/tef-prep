@@ -1,0 +1,31 @@
+{
+  "nivel_evaluado": "B2",
+  "puntuacion_global": 83,
+  "competencias": {
+    "respeto_consigna": 21,
+    "correccion_linguistica": 20,
+    "riqueza_lengua": 19,
+    "organizacion_coherencia": 23
+  },
+  "puntos_fuertes": [
+    "El texto responde claramente a la naturaleza de una propuesta formal dirigida a un superior jerárquico (M. Dubois).",
+    "Las ideas están presentadas de forma lógica y estructurada, facilitando la comprensión de la propuesta.",
+    "Se observa un uso correcto de la gramática y la sintaxis, sin errores mayores que obstaculicen la comunicación.",
+    "El registro utilizado es apropiado para una comunicación profesional y formal."
+  ],
+  "areas_mejora": [
+    "Aunque el vocabulario es adecuado, podría enriquecerse con términos más específicos relacionados con la gestión de proyectos o la productividad empresarial.",
+    "La frase 'on gagnerait au moins deux heures par jour dans le traitement des dossiers' utiliza una estructura impersonal ('on') que, si bien es común, podría ser sustituida por una forma más explícita y formal en un contexto de propuesta escrita a un superior, como 'nous gagnerions' o 'cela nous permettrait de gagner'.",
+    "La conclusión 'J'espère que mon initiative vous plaira' es correcta pero podría ser ligeramente más proactiva o vinculada a la acción esperada, por ejemplo, sugiriendo un próximo paso concreto para la reflexión o discusión."
+  ],
+  "errores_frecuentes": [
+    "Uso del pronombre impersonal 'on' en lugar de formas más explícitas o formales en un contexto de escritura profesional."
+  ],
+  "recomendaciones": [
+    "Para enriquecer el léxico, consultar un glosario de términos empresariales o de gestión de proyectos.",
+    "Practicar la variedad de estructuras oracionales, especialmente en la formulación de hipótesis y propuestas, explorando el uso del subjuntivo y el condicional con diferentes sujetos.",
+    "Revisar las normas de cortesía y formalidad en la escritura profesional francesa, prestando atención a la elección de pronombres y formulaciones."
+  ],
+  "nivel_alcanzado": "B2+",
+  "siguiente_paso": "Consolidar el nivel B2 mediante la práctica de la expresión escrita más matizada y el uso de un léxico más técnico y específico, preparando para el C1 mediante la experimentación con estructuras sintácticas más complejas y un registro aún más adaptado a situaciones profesionales diversas."
+}

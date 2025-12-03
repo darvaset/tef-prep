@@ -52,3 +52,25 @@ python tef_system.py research --topic="subjonctif" --level="B2" --competency="gr
 
 **Resultado:**
 El comando imprime en la consola una lista de hasta 10 URLs de recursos de alta calidad (artículos, ejercicios, videos) relacionados con el tema solicitado.
+
+---
+
+### 3. `improve`
+
+**Propósito:** Genera un plan de estudio personalizado a partir de un archivo de feedback JSON.
+
+**Uso:**
+```bash
+python tef_system.py improve --feedback RUTA_AL_FEEDBACK.json
+```
+
+**Argumentos:**
+- `--feedback`: La ruta al archivo JSON de feedback generado por el comando `evaluate`.
+
+**Ejemplo:**
+```bash
+python tef_system.py improve --feedback="outputs/feedback/20251202_215545_feedback_test_consigna_non_respectee.json"
+```
+
+**Resultado:**
+Genera un archivo Markdown (`.md`) con un plan de estudio detallado de 3 semanas en la carpeta `outputs/study_plans/`. El plan se enfoca en las áreas de mejora y errores identificados en el feedback.

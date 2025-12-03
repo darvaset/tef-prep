@@ -1,0 +1,31 @@
+{
+  "nivel_evaluado": "B2",
+  "puntuacion_global": 70,
+  "competencias": {
+    "respeto_consigna": 9,
+    "correccion_linguistica": 20,
+    "riqueza_lengua": 18,
+    "organizacion_coherencia": 23
+  },
+  "puntos_fuertes": [
+    "Excelente uso de la estructura de carta formal (saludo, cuerpo, despedida).",
+    "Vocabulario adecuado y preciso para describir un producto (couleur, qualité, puissance, moteur, performance).",
+    "Buena coherencia y progresión lógica de las ideas dentro del texto.",
+    "Corrección gramatical y ortográfica muy elevada, con pocos errores."
+  ],
+  "areas_mejora": [
+    "No se ha cumplido la función comunicativa principal de la consigna, que presumiblemente era una queja o una solicitud de devolución/cambio, ya que el estudiante se limita a describir el producto y a dar consejos, sin expresar explícitamente una insatisfacción que requiera una acción por parte del vendedor.",
+    "Falta de precisión en la expresión de la insatisfacción. Frases como 'je pense que la puissance est insuffisante' y 'je pense que le moteur manque de performance' son demasiado genéricas y no explican claramente el problema o la expectativa incumplida.",
+    "La recomendación 'vous devriez améliorer la puissance' y 'je vous conseille de le remplacer par un modèle de 900 watts' no es una solicitud de acción clara por parte del cliente, sino un consejo para el futuro."
+  ],
+  "errores_frecuentes": [
+    "Omisión de la intención comunicativa principal de la tarea (por ejemplo, no se solicita un reembolso, un cambio, ni se expresa una queja formal con el objetivo de obtener una solución)."
+  ],
+  "recomendaciones": [
+    "Para mejorar 'Respeto de la consigna', es crucial identificar claramente el objetivo principal de la tarea (queja, solicitud, etc.) y asegurarse de que el texto cumpla con esa función. Por ejemplo, si la consigna era quejarse de un producto, el texto debe incluir frases explícitas de insatisfacción y solicitar una acción concreta (reembolso, cambio, reparación).",
+    "Practicar la formulación de quejas y solicitudes formales, utilizando expresiones como 'Je vous écris pour me plaindre de...', 'Je souhaite obtenir un remboursement/échange...', 'Le produit ne correspond pas à mes attentes car...', 'Je regrette de constater que...'.",
+    "Prestar atención a la claridad de la intención comunicativa: ¿qué quiere el estudiante que haga el destinatario con este texto?"
+  ],
+  "nivel_alcanzado": "B1+",
+  "siguiente_paso": "Consolidar la capacidad de responder de manera efectiva a consignas específicas, asegurando que la función comunicativa principal sea abordada de forma clara y directa, mientras se sigue perfeccionando la riqueza léxica y la complejidad sintáctica para alcanzar un nivel B2 sólido."
+}

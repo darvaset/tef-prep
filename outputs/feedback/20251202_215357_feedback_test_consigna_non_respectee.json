@@ -1,0 +1,36 @@
+{
+  "nivel_evaluado": "B2",
+  "puntuacion_global": 65,
+  "competencias": {
+    "respeto_consigna": 10,
+    "correccion_linguistica": 20,
+    "riqueza_lengua": 18,
+    "organizacion_coherencia": 17
+  },
+  "puntos_fuertes": [
+    "La corrección gramatical y ortográfica es generalmente buena.",
+    "El vocabulario utilizado es apropiado para el tema (achat, produit, qualité, puissance, modèle).",
+    "La organización del texto es lógica con una introducción, desarrollo y conclusión.",
+    "El registro de la escritura es formal y adecuado para una comunicación escrita a un vendedor (Madame, Monsieur, Veuillez agréer...).",
+    "Se expresa una opinión clara sobre el producto."
+  ],
+  "areas_mejora": [
+    "La función comunicativa principal de la consigna (implícitamente, solicitar una mejora o solución ante un problema) no se ha cumplido explícitamente.",
+    "La estructura de la queja o sugerencia de mejora podría ser más elaborada y convincente.",
+    "El desarrollo de los argumentos sobre la potencia insuficiente podría ser más detallado.",
+    "Aunque se mencionan aspectos positivos, la crítica principal se expresa de forma un tanto ambigua ('je pense que la puissance est insuffisante', 'je pense que le moteur manque de performance')."
+  ],
+  "errores_frecuentes": [
+    "La omisión de una solicitud clara de acción o solución. El texto describe un problema y sugiere una mejora, pero no solicita explícitamente una sustitución, reparación o descuento.",
+    "El uso de 'pense que' de forma repetida para expresar un problema que debería ser afirmado con mayor certeza en un contexto de queja o solicitud de mejora.",
+    "La sugerencia de reemplazarlo por un modelo de 900 watts, aunque concreta, no viene acompañada de una petición formal (ej. 'Je souhaiterais commander un modèle...', 'Pourriez-vous procéder à un échange...')."
+  ],
+  "recomendaciones": [
+    "Para la próxima vez, asegúrate de identificar claramente la función comunicativa principal de la tarea. Si es una queja, debes expresar tu descontento y solicitar una acción concreta (reparación, cambio, reembolso).",
+    "Reformula las frases que expresan el problema para que sean más directas. En lugar de 'Je pense que la puissance est insuffisante', considera 'La puissance du grille-pain est insuffisante' o 'Je constate que la puissance est insuffisante'.",
+    "Añade una frase clara y explícita que indique lo que esperas del vendedor. Por ejemplo: 'Je souhaiterais donc procéder à un échange pour un modèle de puissance supérieure' o 'Je vous serais reconnaissant de bien vouloir examiner cette situation et me proposer une solution.'",
+    "Practica la redacción de cartas de reclamación o solicitud formal, prestando atención a las fórmulas de cortesía y a la estructura argumentativa."
+  ],
+  "nivel_alcanzado": "B1+",
+  "siguiente_paso": "Consolidar la expresión de solicitudes y reclamaciones explícitas y argumentadas, asegurando el cumplimiento de la función comunicativa principal de la tarea, para alcanzar de forma consistente un nivel B2 en la producción escrita."
+}
