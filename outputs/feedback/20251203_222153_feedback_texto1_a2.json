@@ -1,0 +1,49 @@
+{
+  "modo_evaluacion": "objetivo_especifico",
+  "nivel_detectado": "A2",
+  "nivel_objetivo": "B1",
+  "nivel_evaluado": "B1",
+  "puntuacion_global": 58,
+  "competencias": {
+    "respeto_consigna": 23,
+    "correccion_linguistica": 13,
+    "riqueza_lengua": 11,
+    "organizacion_coherencia": 11
+  },
+  "puntos_fuertes": [
+    "El texto responde claramente a la consigna de escribir a un amigo sobre las vacaciones.",
+    "Se incluyen todos los puntos solicitados (dónde fue, qué hizo, impresiones).",
+    "El registro es apropiado (informal).",
+    "La estructura es simple pero funcional para un mensaje corto.",
+    "Hay una introducción y una conclusión claras."
+  ],
+  "areas_mejora": [
+    "La corrección lingüística presenta varios errores básicos de concordancia y conjugación.",
+    "El vocabulario es muy limitado y recurrente.",
+    "La organización y coherencia se benefician de conectores más variados y una mayor fluidez.",
+    "La construcción de frases es bastante simple, le falta complejidad."
+  ],
+  "errores_frecuentes": [
+    "Concordancia adjetivo-sustantivo (ex: \"vacances était super\", \"hotel était très joli\", \"personnel très amable\").",
+    "Conjugación verbal incorrecta (ex: \"mes vacances était\" en lugar de \"mes vacances étaient\").",
+    "Uso de artículos incorrectos o ausentes.",
+    "Errores de ortografía (ex: \"delicieux\" en lugar de \"délicieux\")."
+  ],
+  "recomendaciones": [
+    "Repasar las reglas de concordancia (género y número) entre sustantivos, adjetivos y verbos.",
+    "Practicar las conjugaciones verbales en tiempos pasados como el passé composé y el imparfait.",
+    "Enriquecer el vocabulario mediante la lectura de textos más variados y el uso de diccionarios temáticos.",
+    "Trabajar en la variedad de conectores para enlazar ideas de forma más sofisticada (ej. \"De plus\", \"En outre\", \"Par ailleurs\", \"Cependant\", \"Malgré\").",
+    "Intentar construir frases más complejas, utilizando proposiciones subordinadas."
+  ],
+  "brecha_nivel": {
+    "desde": "A2",
+    "hasta": "B1",
+    "areas_criticas": [
+      "Corrección lingüística (errores de concordancia y conjugación frecuentes)",
+      "Riqueza y precisión del vocabulario (uso limitado y repetitivo)",
+      "Organización y coherencia (necesidad de mayor variedad de conectores y estructuras sintácticas)"
+    ]
+  },
+  "siguiente_paso": "Para pasar de un nivel A2 detectado a un B1 evaluado, el foco debe estar en consolidar la corrección gramatical básica, especialmente las concordancias y conjugaciones, y comenzar a expandir el vocabulario y las estructuras de frases para expresar ideas de forma más matizada y conectada."
+}

@@ -1,67 +1,60 @@
 # Gemini Agent Log
 
 ---
-**Fecha:** 2025-12-02
-
-**Estado Actual:**
-
-1.  **`TEFResourceResearcher` Implementado:** He implementado el agente de búsqueda de recursos y lo he integrado en `tef_system.py`.
-2.  **Prueba de Búsqueda:** Realicé una búsqueda de prueba con el comando `research`. La prueba se ejecutó sin errores de API, lo que significa que tus claves (`SEARCH_API_KEY` y `SEARCH_ENGINE_ID`) son válidas y el sistema puede conectarse a la API de búsqueda de Google.
-3.  **Resultados de la Búsqueda:** La búsqueda no arrojó ningún resultado (0 resultados).
-
-**Actualización:**
-
-Has confirmado que el `SEARCH_ENGINE_ID` y `SEARCH_API_KEY` están correctamente configurados en `config/.env`, y que has añadido las URLs recomendadas a tu Motor de Búsqueda Programable.
-
-**¡Éxito en la Búsqueda de Prueba!**
-
-He ajustado la consulta de búsqueda dentro del agente `TEFResourceResearcher` para hacerla más general. Al ejecutar la búsqueda de prueba nuevamente con el tema "subjonctif`, nivel `B2` y competencia `grammaire`, **¡se encontraron 5 resultados relevantes!**
-
-Esto confirma que:
-*   Tus claves `SEARCH_API_KEY` y `SEARCH_ENGINE_ID` están funcionando perfectamente.
-*   Tu Motor de Búsqueda Programable de Google está configurado correctamente con los sitios web especificados.
-*   El agente `TEFResourceResearcher` es capaz de realizar búsquedas y obtener resultados.
-
----
-
-**Próximo Paso:**
-
-Hemos completado la implementación y prueba básica del agente `TEFResourceResearcher`. ¿Hay algo más en lo que pueda ayudarte con el proyecto?
-
----
-**Fecha:** 2025-12-02
-
-**Descubrimiento y Planificación:**
-
-1.  **Discrepancia Detectada:** El usuario intentó utilizar el comando `improve` basándose en la documentación del `README.md`. El comando falló con el error `argument command: invalid choice: 'improve'`.
-2.  **Análisis:** Se confirmó que el comando `improve` no está implementado en `tef_system.py`. Esto es consistente con el `ROADMAP.md`, que asigna esta funcionalidad (agente `TEF Improvement Advisor`) a la **FASE 2**, aún no iniciada.
-3.  **Acuerdo de Plan:** Se acordó con el usuario no implementar la funcionalidad inmediatamente. En su lugar, se realizarán los siguientes pasos primero:
-    *   Actualizar este `GEMINI_LOG.md`.
-    *   Crear un nuevo archivo `HOW_TO_USE.md` para documentar los comandos que sí están implementados (`evaluate`, `research`).
-
-**Próximo Paso:**
-
-Crear el archivo `HOW_TO_USE.md` y, una vez validado por el usuario, proceder con la implementación de la FASE 2.
-
----
 **Fecha:** 2025-12-03
 
-**Cierre de Implementación y Validación de Fases 1, 2 y 3:**
+**Resumen de la Sesión:**
+La sesión de hoy se centró en un ciclo completo de implementación, prueba y refinamiento del sistema TEF, culminando con la integración de todos los agentes y la adición de nuevas características significativas.
 
-Se han completado y validado todas las fases de implementación y refinamiento.
+### Implementación y Refinamiento del `TEF Writing Validator` (Prioridad 1)
 
-1.  **`TEF Writing Validator` (Fase 1 - Fundamentos):**
-    *   **Refinamientos completados**: Se implementaron la "Regla de Separación de Criterios" y la "Rúbrica de Nivel Alcanzado" en el `system_prompt.md` del `Validator`. Esto asegura que `respeto_consigna` no penalice errores lingüísticos y que el `nivel_alcanzado` se asigne mediante umbrales claros.
-    *   **Validación exitosa**: La prueba con el "Texto 1 - Nivel A2" (`inputs/student_writings/texto1_a2.txt`) mostró el comportamiento deseado: `respeto_consigna` obtuvo una puntuación alta (22/25) mientras `correccion_linguistica` penalizó los errores gramaticales, confirmando la correcta separación de criterios y la nueva rúbrica de nivel.
+1.  **Detección de Problemas:** El análisis de pruebas iniciales reveló que el `Validator` estaba "contaminando" la puntuación de `respeto_consigna` con errores gramaticales y era demasiado conservador al asignar el `nivel_alcanzado`.
 
-2.  **`TEF Improvement Advisor` (Fase 2 - Inteligencia de Mejora):**
-    *   **Refinamiento completado**: Se modificó el `system_prompt.md` del `Advisor` para generar una sección `TEMAS_PARA_INVESTIGAR` estructurada en formato YAML.
-    *   **Validación exitosa**: La prueba confirmó que el `Advisor` generó esta sección correctamente con 5 temas relevantes y el nivel adecuado.
+2.  **Refinamiento del Prompt:** Para solucionar esto, se modificó el `agents/tef-writing-validator/system_prompt.md` en varias iteraciones para incluir:
+    *   Una **"Regla de Oro"** para penalizar severamente la omisión de la función comunicativa principal.
+    *   Una **"Regla de Separación de Criterios"** para aislar `respeto_consigna` de los errores lingüísticos.
+    *   Una **"Rúbrica de Nivel Alcanzado"** con umbrales numéricos para asignar el nivel de forma determinista.
 
-3.  **Orquestación en `tef_system.py` (Fase 3 - Investigación Automática de Recursos):**
-    *   **Implementación completada**: Se integró la lógica en el método `improve_plan` para parsear los temas de investigación del `Advisor`, llamar al `TEF Resource Researcher` y anexar los recursos encontrados al plan de estudio.
-    *   **Validación exitosa**: El flujo completo `evaluate` -> `improve` (con `texto1_a2.txt`) funcionó, resultando en un plan de estudio enriquecido con la sección `Recursos Recomendados` que incluye enlaces reales obtenidos por el `Researcher`.
+3.  **Implementación de Detección Automática de Nivel:**
+    *   Se modificó `tef_system.py` para hacer el argumento `--level` opcional.
+    *   Se ajustó `agents/tef_writing_validator.py` para operar en dos modos: "Detección Automática" (si `--level` se omite) y "Evaluación contra Objetivo".
+    *   El `system_prompt.md` se reestructuró para soportar ambos modos.
 
-**Estado Actual del Proyecto:** Las Fases 1, 2 y 3 del `ROADMAP.md` están funcionalmente completadas, con todos los agentes principales (Validator, Improvement Advisor, Resource Researcher) implementados, refinados y trabajando de forma integrada.
+4.  **Validación:** Las pruebas confirmaron que:
+    *   El modo de detección automática funciona y el nuevo formato JSON (`nivel_detectado`, `nivel_objetivo`, etc.) se genera correctamente.
+    *   La retrocompatibilidad con el modo de objetivo específico se mantiene.
+    *   Las nuevas reglas de puntuación funcionan como se esperaba.
 
-**Próximo Paso:** Actualizar la documentación restante del proyecto (`ROADMAP.md`, `README.md`, `HOW_TO_USE.md`) para reflejar el estado actual y los importantes avances logrados.
+### Implementación y Refinamiento del `TEF Improvement Advisor` (Prioridad 2)
+
+1.  **Integración con Nuevos Campos:** Se adaptó el `agents/tef_improvement_advisor.py` para que su agente utilizara los nuevos campos (`nivel_detectado`, `nivel_objetivo`, `brecha_nivel`) del feedback del `Validator`.
+
+2.  **Implementación de Modos de Estudio (Normal/Intensivo):**
+    *   Se añadió el argumento `--mode` (`normal` o `intensive`) al comando `improve` en `tef_system.py`.
+    *   Se actualizó `agents/tef-improvement-advisor/system_prompt.md` para instruir al agente a generar planes de estudio de diferente intensidad según el modo seleccionado.
+
+3.  **Validación:** Las pruebas confirmaron que el sistema genera planes de estudio diferentes y correctamente etiquetados para los modos `normal` e `intensive`.
+
+### Integración Final y Orquestación (Prioridad 3)
+
+1.  **Extracción de Temas:** El `system_prompt.md` del `Advisor` se refinó para generar una lista estructurada de `TEMAS_PARA_INVESTIGAR` en formato YAML.
+
+2.  **Orquestación en `tef_system.py`**: El método `improve_plan` se modificó para:
+    *   Parsear la sección `TEMAS_PARA_INVESTIGAR` del output del `Advisor`.
+    *   Llamar al `TEF Resource Researcher` para cada tema.
+    *   Anexar una sección de `Recursos Recomendados` con enlaces reales al final del plan de estudio.
+
+3.  **Validación Final:** Una prueba de extremo a extremo (`evaluate` en modo detección -> `improve`) demostró que el flujo completo funciona, generando un plan de estudio personalizado, con la intensidad correcta y enriquecido con recursos específicos.
+
+### Corrección de Errores
+
+Durante la implementación, se identificaron y corrigieron varios errores, incluyendo:
+*   `ModuleNotFoundError` para `dotenv` y `google-generativeai`.
+*   `NameError` por una importación faltante de `json`.
+*   `TypeError` y `SyntaxError` debido a errores en la implementación de los métodos y en la manipulación de archivos.
+
+**Estado del Proyecto:**
+El sistema ha alcanzado un estado de madurez funcional significativo. Los tres agentes principales están implementados, son robustos y colaboran de forma orquestada para ofrecer un producto final de alto valor.
+
+**Próximo Paso:**
+Actualizar toda la documentación restante y crear un plan para los próximos pasos de desarrollo de la aplicación.

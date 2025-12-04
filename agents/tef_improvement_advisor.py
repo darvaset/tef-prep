@@ -1,3 +1,4 @@
+import json
 # -*- coding: utf-8 -*-
 """
 TEF Improvement Advisor Agent
@@ -41,12 +42,13 @@ class TEFImprovementAdvisor:
         except FileNotFoundError:
             raise FileNotFoundError(f"No se encontró el archivo de system prompt en: {prompt_path}")
 
-    def generate_plan(self, feedback_data):
+    def generate_plan(self, feedback_data: dict, mode: str = "normal") -> dict:
         """
         Genera un plan de estudio personalizado a partir de los datos de feedback.
 
         Args:
             feedback_data (dict): Un diccionario con los resultados de la evaluación.
+            mode (str): El modo del plan de estudio ('normal' o 'intensive').
 
         Returns:
             str: El plan de estudio generado en formato Markdown.
@@ -54,47 +56,53 @@ class TEFImprovementAdvisor:
         if not isinstance(feedback_data, dict):
             return {"status": "error", "message": "El feedback debe ser un diccionario."}
 
-        # Extraer las secciones clave para el prompt
         try:
-            nivel_alcanzado = feedback_data.get("nivel_alcanzado", "No especificado")
-            areas_mejora = feedback_data.get("areas_mejora", [])
-            errores_frecuentes = feedback_data.get("errores_frecuentes", [])
-            recomendaciones = feedback_data.get("recomendaciones", [])
+            # Extraer la nueva estructura de datos del feedback
+            context_data = {
+                "nivel_detectado": feedback_data.get("nivel_detectado", "N/A"),
+                "nivel_objetivo": feedback_data.get("nivel_objetivo", "N/A"),
+                "brecha_nivel": feedback_data.get("brecha_nivel", {}),
+                "areas_mejora": feedback_data.get("areas_mejora", []),
+                "errores_frecuentes": feedback_data.get("errores_frecuentes", [])
+            }
 
-            if not any([areas_mejora, errores_frecuentes, recomendaciones]):
-                return {"status": "error", "message": "El feedback no contiene información suficiente para generar un plan."}
+            if context_data["nivel_detectado"] == "N/A":
+                return {"status": "error", "message": "El feedback no contiene el campo requerido 'nivel_detectado'."}
 
         except Exception as e:
             return {"status": "error", "message": f"Error al procesar los datos de feedback: {e}"}
 
         # Construir el contexto para el prompt del usuario
-        user_prompt_context = f"""
-## CONTEXTO DE LA EVALUACIÓN DEL ESTUDIANTE
+        user_prompt = f"""
+## CONTEXTO PARA EL PLAN DE ESTUDIO
 
-Aquí tienes el resumen del feedback recibido por el estudiante. Tu tarea es usar esta información para crear el plan de estudio personalizado como se te indicó en tu rol de sistema.
+**Feedback del Estudiante:**
+```json
+{{
+  "nivel_detectado": "{context_data['nivel_detectado']}",
+  "nivel_objetivo": "{context_data['nivel_objetivo']}",
+  "brecha_nivel": {json.dumps(context_data['brecha_nivel'])},
+  "areas_mejora": {json.dumps(context_data['areas_mejora'])},
+  "errores_frecuentes": {json.dumps(context_data['errores_frecuentes'])}
+}}
+```
 
-- **Nivel Alcanzado**: {nivel_alcanzado}
+**Modo de Plan Solicitado:**
+- **modo_plan**: "{mode}"
 
-- **Áreas de Mejora Identificadas**:
-{self._format_list(areas_mejora)}
-
-- **Errores Frecuentes Detectados**:
-{self._format_list(errores_frecuentes)}
-
-- **Recomendaciones Sugeridas**:
-{self._format_list(recomendaciones)}
+**Tu Tarea:**
+Genera el plan de estudio personalizado en formato Markdown siguiendo TODAS las instrucciones de tu rol (Contexto, Modos, Formato de Output).
 """
 
         # Crear la sesión de chat con el modelo
         try:
             chat = self.model.start_chat(history=[
                 {'role': 'user', 'parts': [self.system_prompt]},
-                {'role': 'model', 'parts': ["Entendido. Estoy listo para recibir el feedback del estudiante y crear su plan de estudio personalizado."]}
+                {'role': 'model', 'parts': ["Entendido. Estoy listo para recibir el contexto y el modo del plan para generar la hoja de ruta del estudiante."]}
             ])
             
-            response = chat.send_message(user_prompt_context)
+            response = chat.send_message(user_prompt)
             
-            # Limpiar la respuesta para asegurar que solo contenga el plan
             plan_content = response.text.strip()
             
             return {"status": "success", "plan": plan_content}

@@ -54,14 +54,20 @@ El sistema opera mediante workflows que coordinan la interacción entre agentes:
 # Inicializar la estructura del proyecto
 python init_project.py
 
-# Evaluar un escrito
+# Evaluar un escrito (modo detección automática)
+python tef_system.py evaluate --input="inputs/student_writings/mi_ensayo.txt"
+
+# Evaluar un escrito (modo objetivo específico)
 python tef_system.py evaluate --input="inputs/student_writings/mi_ensayo.txt" --level="B2"
 
-# Investigar recursos para un tema específico
-python tef_system.py research --topic="subjuntivo" --level="B2"
+# Generar plan de mejora enriquecido (modo normal)
+python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json"
 
-# Generar plan de mejora basado en evaluación previa
-python tef_system.py improve --feedback="outputs/feedback/ensayo_001_feedback.json"
+# Generar plan de mejora enriquecido (modo intensivo)
+python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json" --mode="intensive"
+
+# Investigar recursos para un tema específico (uso directo)
+python tef_system.py research --topic="subjuntivo" --level="B2"
 ```
 
 ## 📁 Estructura del Proyecto

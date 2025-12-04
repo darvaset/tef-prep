@@ -23,6 +23,7 @@ Crear un sistema completo de preparación TEF que automatice el proceso de evalu
   - [x] Validación con ejemplos de prueba
   - [x] Refinamiento de la rúbrica de `respeto_consigna` (Regla de Oro, Separación de Criterios)
   - [x] Implementación de la Rúbrica de Nivel Alcanzado
+  - [x] Implementación de Detección Automática de Nivel (modo sin --level)
 - [x] Configuración de logging del sistema (básica)
 - [x] Integración con APIs (Gemini/Claude)
 - [x] Casos de prueba para el validator (implícitos y validados)
@@ -51,6 +52,7 @@ Crear un sistema completo de preparación TEF que automatice el proceso de evalu
   - [x] Templates de rutas de aprendizaje por debilidad
   - [x] Integración con feedback del Validator
   - [x] Modificación del prompt para extraer `TEMAS_PARA_INVESTIGAR` en formato estructurado
+  - [x] Implementación de Modos de Estudio (Normal/Intensivo)
 - [x] **Workflow de Evaluación Completa (parcial)**
   - [x] Flujo `Validator` → `Advisor` → Plan de Mejora implementado
   - [x] Formato estandarizado de intercambio entre agentes (JSON → Markdown)

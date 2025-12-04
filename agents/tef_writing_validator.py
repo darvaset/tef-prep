@@ -86,32 +86,6 @@ class TEFWritingValidator:
             self.logger.error(f"Error cargando system prompt: {e}")
             raise
 
-    def _build_prompt(self, student_text: str, student_level: str, target_level: str) -> str:
-        """Construye el prompt final para enviar a la API de Gemini."""
-        
-        user_prompt = f"""
-## Tarea de Evaluación
-
-**Texto del estudiante:**
----
-{student_text}
----
-
-**Información del estudiante:**
-- **Nivel actual declarado:** {student_level}
-- **Nivel objetivo:** {target_level or 'No especificado'}
-
-**Instrucciones:**
-1.  Evalúa el texto proporcionado basándote estrictamente en los criterios TEF descritos en tu rol.
-2.  Determina el nivel CECR alcanzado en este escrito.
-3.  Asigna una puntuación para cada una de las 4 competencias (sobre 25 puntos cada una).
-4.  Calcula la puntuación global (sobre 100).
-5.  Proporciona un análisis detallado de puntos fuertes, áreas de mejora y errores.
-6.  Ofrece recomendaciones concretas y accionables.
-7.  Devuelve la evaluación completa en el formato JSON especificado, sin añadir ningún texto o explicación fuera del JSON.
-"""
-        return self.system_prompt + user_prompt
-
     def _parse_response(self, response_text: str) -> dict:
         """Parsea la respuesta JSON del modelo, con manejo de errores."""
         try:
@@ -131,21 +105,51 @@ class TEFWritingValidator:
             self.logger.error(f"Error inesperado al parsear la respuesta: {e}")
             raise
 
-    def evaluate(self, student_text: str, student_level: str, target_level: str = None) -> dict:
+    def evaluate(self, student_text: str, student_level: str = None, target_level: str = None) -> dict:
         """
-        Evalúa el texto de un estudiante.
+        Evalúa el texto de un estudiante en uno de dos modos:
+        1. Detección Automática: Si no se provee student_level.
+        2. Evaluación contra Objetivo: Si se provee student_level.
 
         Args:
             student_text (str): El texto a evaluar.
-            student_level (str): El nivel actual declarado por el estudiante.
-            target_level (str, optional): El nivel que el estudiante aspira a alcanzar.
+            student_level (str, optional): El nivel objetivo para la evaluación. Si es None, se activa la detección.
+            target_level (str, optional): Nivel que el estudiante aspira a alcanzar (histórico, puede ser deprecado).
 
         Returns:
             dict: Un diccionario con la evaluación estructurada.
         """
-        self.logger.info(f"Iniciando evaluación para estudiante de nivel {student_level}.")
-        
-        final_prompt = self._build_prompt(student_text, student_level, target_level)
+        if student_level:
+            self.logger.info(f"Iniciando evaluación en MODO OBJETIVO para nivel {student_level}.")
+            user_prompt = f"""
+**MODO**: objetivo_especifico
+**NIVEL OBJETIVO**: {student_level}
+
+**Texto del estudiante:**
+---
+{student_text}
+---
+
+**Instrucciones:**
+1.  Evalúa el texto proporcionado basándote estrictamente en los criterios y rúbricas de tu rol.
+2.  Devuelve la evaluación completa en el formato JSON especificado, sin añadir ningún texto o explicación fuera del JSON.
+"""
+        else:
+            self.logger.info("Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.")
+            user_prompt = f"""
+**MODO**: deteccion_automatica
+
+**Texto del estudiante:**
+---
+{student_text}
+---
+
+**Instrucciones:**
+1.  Realiza el análisis y la evaluación siguiendo las instrucciones de tu rol para el modo de detección automática.
+2.  Devuelve la evaluación completa en el formato JSON especificado, sin añadir ningún texto o explicación fuera del JSON.
+"""
+
+        final_prompt = self.system_prompt + user_prompt
         
         try:
             self.logger.info("Enviando petición a la API de Gemini.")
@@ -158,7 +162,7 @@ class TEFWritingValidator:
             
             evaluation = self._parse_response(response_text)
             
-            self.logger.info(f"Evaluación completada. Nivel alcanzado: {evaluation.get('evaluation_results', {}).get('nivel_evaluado', 'N/A')}")
+            self.logger.info(f"Evaluación completada. Modo: {evaluation.get('modo_evaluacion')}, Nivel Detectado: {evaluation.get('nivel_detectado', 'N/A')}")
             return evaluation
 
         except Exception as e:

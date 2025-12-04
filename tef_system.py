@@ -257,9 +257,9 @@ class TEFSystem:
             print(f"❌ Error inesperado en el flujo de investigación: {str(e)}")
             return {"status": "error", "message": f"Error inesperado: {str(e)}"}
 
-    def improve_plan(self, feedback_file):
+    def improve_plan(self, feedback_file, mode="normal"):
         """Genera un plan de mejora a partir de un archivo de feedback y le añade recursos."""
-        print(f"🚀 Iniciando generación de plan de mejora...")
+        print(f"🚀 Iniciando generación de plan de mejora (Modo: {mode})...")
         print(f"   📄 Archivo de feedback: {feedback_file}")
 
         if not self.validate_input_file(feedback_file):
@@ -275,7 +275,7 @@ class TEFSystem:
 
             print("   🤖 Ejecutando TEF Improvement Advisor...")
             advisor = TEFImprovementAdvisor(config=agent_config)
-            result = advisor.generate_plan(feedback_data)
+            result = advisor.generate_plan(feedback_data, mode)
 
             if result.get("status") == "error":
                 print(f"   ❌ Error al generar el plan: {result.get('message')}")
@@ -451,8 +451,8 @@ Ejemplos de uso:
     evaluate_parser = subparsers.add_parser("evaluate", help="Evaluar un escrito")
     evaluate_parser.add_argument("--input", required=True, 
                                 help="Archivo de texto a evaluar")
-    evaluate_parser.add_argument("--level", default="B2", 
-                                help="Nivel actual del estudiante (A1-C2)")
+    evaluate_parser.add_argument("--level", default=None, 
+                                help="Nivel objetivo para la evaluación (ej. B2). Si se omite, se activará la detección automática de nivel.")
     evaluate_parser.add_argument("--target", 
                                 help="Nivel objetivo del estudiante")
     
@@ -481,6 +481,8 @@ Ejemplos de uso:
     improve_parser = subparsers.add_parser("improve", help="Generar plan de mejora desde feedback")
     improve_parser.add_argument("--feedback", required=True,
                                 help="Ruta al archivo JSON de feedback")
+    improve_parser.add_argument("--mode", default="normal", choices=["normal", "intensive"],
+                                help="Modo del plan de estudio: normal (default) o intensive.")
     
     # Parsear argumentos
     args = parser.parse_args()
@@ -522,7 +524,7 @@ Ejemplos de uso:
             print(json.dumps(result, indent=2, ensure_ascii=False))
 
         elif args.command == "improve":
-            result = tef_system.improve_plan(args.feedback)
+            result = tef_system.improve_plan(args.feedback, args.mode)
             print("\n📋 Resultado del Plan de Mejora:")
             print(json.dumps(result, indent=2, ensure_ascii=False))
         

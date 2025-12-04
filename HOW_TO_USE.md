@@ -10,24 +10,35 @@ A continuación se detallan los comandos que están implementados y listos para 
 
 ### 1. `evaluate`
 
-**Propósito:** Evalúa un texto escrito por un estudiante para un nivel específico del TEF.
+**Propósito:** Evalúa un texto escrito por un estudiante. Opera en dos modos:
+1.  **Detección Automática:** Si no se especifica un nivel, el sistema detecta el nivel del estudiante y lo evalúa contra el siguiente nivel de la escala CEFR.
+2.  **Evaluación contra Objetivo:** Si se especifica un nivel, el sistema evalúa el texto directamente contra ese estándar.
 
 **Uso:**
 ```bash
+# Modo Detección Automática
+python tef_system.py evaluate --input RUTA_AL_ARCHIVO
+
+# Modo Evaluación contra Objetivo
 python tef_system.py evaluate --input RUTA_AL_ARCHIVO --level NIVEL_OBJETIVO
 ```
 
 **Argumentos:**
-- `--input`: La ruta al archivo de texto (`.txt`) que contiene el escrito del estudiante.
-- `--level`: El nivel TEF que el estudiante intenta alcanzar (ej. A1, A2, B1, B2, C1, C2).
+- `--input` (obligatorio): La ruta al archivo de texto (`.txt`) que contiene el escrito del estudiante.
+- `--level` (opcional): El nivel TEF objetivo para la evaluación (ej. B2). Si se omite, se activa la detección automática.
 
-**Ejemplo:**
+**Ejemplo (Detección Automática):**
 ```bash
-python tef_system.py evaluate --input="inputs/student_writings/example_carta_a2.txt" --level="A2"
+python tef_system.py evaluate --input="inputs/student_writings/texto1_a2.txt"
+```
+
+**Ejemplo (Evaluación contra Objetivo):**
+```bash
+python tef_system.py evaluate --input="inputs/student_writings/texto1_a2.txt" --level="B1"
 ```
 
 **Resultado:**
-El comando genera un archivo JSON con una marca de tiempo en la carpeta `outputs/feedback/`. Este archivo contiene una evaluación detallada, puntuaciones por competencia, áreas de mejora y recomendaciones.
+Genera un archivo JSON en la carpeta `outputs/feedback/` con una evaluación detallada, que incluye el modo de evaluación, el nivel detectado, el nivel objetivo y un análisis de la brecha de competencias.
 
 ---
 
@@ -57,35 +68,26 @@ El comando imprime en la consola una lista de hasta 10 URLs de recursos de alta 
 
 ### 3. `improve`
 
-**Propósito:** Genera un plan de estudio personalizado y **enriquecido con recursos educativos recomendados** a partir de un archivo de feedback JSON. Este comando orquesta la inteligencia del `Improvement Advisor` con la capacidad de búsqueda del `Resource Researcher`.
+**Propósito:** Genera un plan de estudio personalizado y enriquecido con recursos, basándose en un archivo de feedback. El plan puede ser `normal` o `intensive`.
 
 **Uso:**
 ```bash
-python tef_system.py improve --feedback RUTA_AL_FEEDBACK.json
+python tef_system.py improve --feedback RUTA_AL_FEEDBACK.json [--mode MODO]
 ```
 
 **Argumentos:**
-- `--feedback`: La ruta al archivo JSON de feedback generado por el comando `evaluate`.
+- `--feedback` (obligatorio): La ruta al archivo JSON de feedback generado por el comando `evaluate`.
+- `--mode` (opcional): El modo del plan de estudio. Opciones: `normal` (default) o `intensive`.
 
-**Ejemplo:**
+**Ejemplo (Modo Normal):**
 ```bash
-python tef_system.py improve --feedback="outputs/feedback/20251203_204559_feedback_texto1_a2.json"
+python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json"
+```
+
+**Ejemplo (Modo Intensivo):**
+```bash
+python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json" --mode="intensive"
 ```
 
 **Resultado:**
-Genera un archivo Markdown (`.md`) con un plan de estudio detallado de 3 semanas en la carpeta `outputs/study_plans/`. El plan se enfoca en las áreas de mejora y errores identificados en el feedback, y **al final del archivo incluirá una sección `## 📚 Recursos Recomendados` con enlaces a recursos online relevantes.**
-
-```markdown
-...
----
-
-## 📚 Recursos Recomendados
-
-### Grammaire: Accord adjectif nom genre nombre (Nivel A2)
-- [Título del recurso 1](URL1)
-- [Título del recurso 2](URL2)
-
-### Grammaire: Accord sujet verbe passé composé (Nivel A2)
-- [Título del recurso 1](URL1)
-- ...
-```
+Genera un archivo Markdown (`.md`) con un plan de estudio detallado de 3 semanas en `outputs/study_plans/`. La cantidad de actividades y la intensidad del plan variarán según el modo seleccionado. El archivo final también incluirá una sección `## 📚 Recursos Recomendados` con enlaces relevantes.
