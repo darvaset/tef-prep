@@ -14,22 +14,27 @@ Crear un sistema completo de preparación TEF que automatice el proceso de evalu
 ### ✅ Completadas
 - [x] Definición de arquitectura de agentes
 - [x] Estructura de carpetas y proyecto
-- [x] Documentación base (README, ROADMAP)
+- [x] Documentación base (README, ROADMAP, HOW_TO_USE)
 - [x] Script de inicialización
 - [x] **TEF Writing Validator** (Agente Principal)
   - [x] System prompt con criterios TEF oficiales
   - [x] Rúbrica de evaluación por nivel (A1-C2)
   - [x] Formato de output estructurado (JSON)
   - [x] Validación con ejemplos de prueba
-- [x] **Knowledge Base inicial** (básica)
+  - [x] Refinamiento de la rúbrica de `respeto_consigna` (Regla de Oro, Separación de Criterios)
+  - [x] Implementación de la Rúbrica de Nivel Alcanzado
 - [x] Configuración de logging del sistema (básica)
 - [x] Integración con APIs (Gemini/Claude)
-- [x] Casos de prueba para el validator (implícitos)
+- [x] Casos de prueba para el validator (implícitos y validados)
+- [ ] **Knowledge Base inicial**
+  - [ ] Investigación y recopilación de exámenes TEF oficiales
+  - [ ] Criterios de evaluación por competencia
+  - [ ] 3-5 ejemplos de escritos por nivel con scores
 
 **Entregables Fase 1**:
 - ✅ Proyecto inicializado con estructura completa
-- ✅ TEF Writing Validator funcional
-- ✅ Knowledge Base con contenido mínimo
+- ✅ TEF Writing Validator funcional y refinado
+- 🔄 Knowledge Base con contenido mínimo
 - ✅ Evaluación de un escrito B2 de ejemplo
 
 ---
@@ -45,9 +50,10 @@ Crear un sistema completo de preparación TEF que automatice el proceso de evalu
   - [x] Generación de planes de estudio personalizados
   - [x] Templates de rutas de aprendizaje por debilidad
   - [x] Integración con feedback del Validator
+  - [x] Modificación del prompt para extraer `TEMAS_PARA_INVESTIGAR` en formato estructurado
 - [x] **Workflow de Evaluación Completa (parcial)**
-  - [x] Validator → Advisor → Plan de Mejora
-  - [x] Formato estandarizado de intercambio entre agentes
+  - [x] Flujo `Validator` → `Advisor` → Plan de Mejora implementado
+  - [x] Formato estandarizado de intercambio entre agentes (JSON → Markdown)
   - [x] Logging de decisiones y recomendaciones (básico)
 
 **Entregables Fase 2**:
@@ -66,18 +72,20 @@ Crear un sistema completo de preparación TEF que automatice el proceso de evalu
 - [x] **TEF Resource Researcher** (Agente de Investigación)
   - [x] Integración con APIs de búsqueda web
   - [x] Templates de búsqueda por tema/nivel
-- [x] **Research Cycle Workflow** (parcial)
   - [x] El agente funciona de manera independiente y puede ser invocado.
+- [x] **Research Cycle Workflow** (parcial)
+  - [x] Integración de `Advisor` → `Researcher` dentro del flujo `improve` en `tef_system.py`.
+  - [x] Añadido de `Recursos Recomendados` a los planes de estudio.
 
 ### 📋 Pendientes (Movidos a FASE 4 - Optimización)
 - [ ] Sistema de validación de calidad de recursos
 - [ ] Base de datos de recursos validados
-- [ ] Workflow completo `Advisor` → `Researcher`
+- [ ] Filtrado automático por relevancia y calidad
 - [ ] Actualización continua de la knowledge base
 
 **Entregables Fase 3**:
 - ✅ TEF Resource Researcher funcional
-- ✅ Sistema completo de 3 agentes operativos de forma independiente
+- ✅ Sistema completo de 3 agentes operativos e integrados en el flujo `improve`
 
 ---
 
@@ -218,6 +226,6 @@ Semanas 19-20: Testing final y documentación
 
 ---
 
-**Última actualización**: Diciembre 02, 2025  
+**Última actualización**: Diciembre 03, 2025  
 **Mantenido por**: Diego | QA Engineering Manager  
 **Próxima revisión**: Cada milestone completado

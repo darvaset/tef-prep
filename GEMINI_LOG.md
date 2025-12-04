@@ -15,7 +15,7 @@ Has confirmado que el `SEARCH_ENGINE_ID` y `SEARCH_API_KEY` están correctamente
 
 **¡Éxito en la Búsqueda de Prueba!**
 
-He ajustado la consulta de búsqueda dentro del agente `TEFResourceResearcher` para hacerla más general. Al ejecutar la búsqueda de prueba nuevamente con el tema "subjonctif", nivel "B2" y competencia "grammaire", **¡se encontraron 5 resultados relevantes!**
+He ajustado la consulta de búsqueda dentro del agente `TEFResourceResearcher` para hacerla más general. Al ejecutar la búsqueda de prueba nuevamente con el tema "subjonctif`, nivel `B2` y competencia `grammaire`, **¡se encontraron 5 resultados relevantes!**
 
 Esto confirma que:
 *   Tus claves `SEARCH_API_KEY` y `SEARCH_ENGINE_ID` están funcionando perfectamente.
@@ -44,32 +44,24 @@ Hemos completado la implementación y prueba básica del agente `TEFResourceRese
 Crear el archivo `HOW_TO_USE.md` y, una vez validado por el usuario, proceder con la implementación de la FASE 2.
 
 ---
-**Fecha:** 2025-12-02
+**Fecha:** 2025-12-03
 
-**Implementación y Refinamiento (Fases 1, 2 y 3):**
+**Cierre de Implementación y Validación de Fases 1, 2 y 3:**
 
-1.  **Implementación de FASE 2 - `TEF Improvement Advisor`**:
-    *   Se añadió el comando `improve` a `tef_system.py`.
-    *   Se creó el agente `TEFImprovementAdvisor` con su propio `system_prompt.md`.
-    *   Se implementó la lógica para leer un feedback JSON y generar un plan de estudio en formato Markdown.
+Se han completado y validado todas las fases de implementación y refinamiento.
 
-2.  **Corrección de Dependencias y Errores**:
-    *   Se encontraron y solucionaron varios errores durante la ejecución.
-    *   `SyntaxError`: Se corrigió un error de sintaxis en el f-string de `tef_improvement_advisor.py`.
-    *   `ModuleNotFoundError`: Se instalaron las dependencias faltantes (`python-dotenv`, `google-generativeai`) y se añadieron a `requirements.txt`.
-    *   `No API_KEY found`: Se corrigió la carga de variables de entorno especificando la ruta `config/.env` en la llamada a `load_dotenv()`.
+1.  **`TEF Writing Validator` (Fase 1 - Fundamentos):**
+    *   **Refinamientos completados**: Se implementaron la "Regla de Separación de Criterios" y la "Rúbrica de Nivel Alcanzado" en el `system_prompt.md` del `Validator`. Esto asegura que `respeto_consigna` no penalice errores lingüísticos y que el `nivel_alcanzado` se asigne mediante umbrales claros.
+    *   **Validación exitosa**: La prueba con el "Texto 1 - Nivel A2" (`inputs/student_writings/texto1_a2.txt`) mostró el comportamiento deseado: `respeto_consigna` obtuvo una puntuación alta (22/25) mientras `correccion_linguistica` penalizó los errores gramaticales, confirmando la correcta separación de criterios y la nueva rúbrica de nivel.
 
-3.  **Refinamiento de FASE 1 - `TEF Writing Validator`**:
-    *   **Problema Detectado**: Se observó que el agente no penalizaba suficientemente la competencia `respeto_consigna` cuando la función comunicativa principal de la tarea era omitida.
-    *   **Solución Iterativa**: Se refinó el `system_prompt.md` del `validator` en dos iteraciones:
-        1.  Se añadió una rúbrica de puntuación detallada.
-        2.  Al no ser suficiente, se añadió una **"Regla de Oro"** de máxima prioridad para forzar una puntuación **máxima de 9/25** en `respeto_consigna` en caso de omisión de la FCP.
-    *   **Validación**: La prueba final con el archivo `test_consigna_non_respectee.txt` confirmó que la "Regla de Oro" funciona, asignando una puntuación de `9/25`.
+2.  **`TEF Improvement Advisor` (Fase 2 - Inteligencia de Mejora):**
+    *   **Refinamiento completado**: Se modificó el `system_prompt.md` del `Advisor` para generar una sección `TEMAS_PARA_INVESTIGAR` estructurada en formato YAML.
+    *   **Validación exitosa**: La prueba confirmó que el `Advisor` generó esta sección correctamente con 5 temas relevantes y el nivel adecuado.
 
-4.  **Éxito del Flujo Completo**:
-    *   Se validó el flujo completo: `evaluate` (con la puntuación corregida) -> `improve`.
-    *   El agente `improver` generó con éxito un plan de estudio personalizado basado en el feedback corregido, demostrando la sinergia entre los agentes.
+3.  **Orquestación en `tef_system.py` (Fase 3 - Investigación Automática de Recursos):**
+    *   **Implementación completada**: Se integró la lógica en el método `improve_plan` para parsear los temas de investigación del `Advisor`, llamar al `TEF Resource Researcher` y anexar los recursos encontrados al plan de estudio.
+    *   **Validación exitosa**: El flujo completo `evaluate` -> `improve` (con `texto1_a2.txt`) funcionó, resultando en un plan de estudio enriquecido con la sección `Recursos Recomendados` que incluye enlaces reales obtenidos por el `Researcher`.
 
-**Próximo Paso:**
+**Estado Actual del Proyecto:** Las Fases 1, 2 y 3 del `ROADMAP.md` están funcionalmente completadas, con todos los agentes principales (Validator, Improvement Advisor, Resource Researcher) implementados, refinados y trabajando de forma integrada.
 
-Actualizar toda la documentación del proyecto (`HOW_TO_USE.md`, `ROADMAP.md`) para reflejar los avances y el estado actual del sistema.
+**Próximo Paso:** Actualizar la documentación restante del proyecto (`ROADMAP.md`, `README.md`, `HOW_TO_USE.md`) para reflejar el estado actual y los importantes avances logrados.

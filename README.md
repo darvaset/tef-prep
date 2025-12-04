@@ -10,7 +10,7 @@ El TEF Preparation System automatiza el proceso de evaluación y mejora en la pr
 
 - **Evaluación automatizada** de escritos según criterios oficiales TEF
 - **Feedback detallado** con puntuaciones específicas por competencia
-- **Planes de estudio personalizados** basados en áreas de mejora identificadas
+- **Planes de estudio personalizados y accionables** basados en áreas de mejora identificadas, **enriquecidos con recursos educativos curados automáticamente.**
 - **Investigación automática** de recursos educativos relevantes
 - **Knowledge base** con ejemplos y criterios de evaluación
 
@@ -22,7 +22,7 @@ El TEF Preparation System automatiza el proceso de evaluación y mejora en la pr
 - **Función**: Evaluador certificado TEF especializado en escritura
 - **Input**: Texto del estudiante + nivel objetivo (A1-C2)
 - **Output**: Feedback estructurado con puntuación y observaciones detalladas
-- **Especialización**: Análisis según criterios oficiales TEF, identificación de errores gramaticales y de estructura
+- **Especialización**: Análisis según criterios oficiales TEF, identificación de errores gramaticales y de estructura, aplicando rúbricas detalladas para la precisión.
 
 #### 2. **TEF Knowledge Base** (`tef-knowledge-base`)
 - **Función**: Repositorio centralizado de conocimiento TEF
@@ -32,21 +32,21 @@ El TEF Preparation System automatiza el proceso de evaluación y mejora en la pr
 #### 3. **TEF Improvement Advisor** (`tef-improvement-advisor`)
 - **Función**: Tutor especializado en planes de mejora personalizados
 - **Input**: Feedback del validator + perfil del estudiante
-- **Output**: Plan de estudio estructurado de 2-4 semanas
-- **Especialización**: Identificación de patrones de error y creación de rutas de aprendizaje
+- **Output**: Plan de estudio estructurado de 2-4 semanas, **con temas específicos para investigación y enlaces a recursos recomendados.**
+- **Especialización**: Identificación de patrones de error, creación de rutas de aprendizaje y **orquestación de búsqueda de recursos.**
 
 #### 4. **TEF Resource Researcher** (`tef-resource-researcher`)
 - **Función**: Investigador especializado en recursos TEF de calidad
-- **Input**: Tópicos específicos de mejora
-- **Output**: Lista curada de recursos online validados
-- **Especialización**: Búsqueda y validación de contenido educativo relevante
+- **Input**: Tópicos específicos de mejora (tema, nivel, competencia)
+- **Output**: Lista curada de recursos online validados (URLs con título)
+- **Especialización**: Búsqueda y validación de contenido educativo relevante, **integrándose con el Improvement Advisor para enriquecer los planes de estudio.**
 
 ### 🔄 Workflows
 
 El sistema opera mediante workflows que coordinan la interacción entre agentes:
 
-1. **Complete Evaluation Workflow**: Evaluación completa de un escrito
-2. **Research Cycle Workflow**: Investigación de recursos para temas específicos
+1. **Complete Evaluation Workflow**: (Pendiente de implementación completa)
+2. **Evaluación + Plan de Mejora Enriquecido**: El comando `improve` ahora orquesta la evaluación del Validator, la creación del plan del Advisor y la búsqueda de recursos del Researcher, todo en un flujo integrado.
 
 ## 🚀 Uso Rápido
 

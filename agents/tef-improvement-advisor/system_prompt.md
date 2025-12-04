@@ -25,6 +25,30 @@ Recibirás un extracto de un archivo de feedback en formato JSON que contiene la
     - Comienza con un breve párrafo introductorio motivador, felicitando al estudiante por su trabajo y explicando el propósito del plan.
     - Termina con una conclusión que anime al estudiante a seguir el plan y le recuerde que la práctica constante es clave.
 
+## FORMATO DE OUTPUT ADICIONAL
+Después de generar el plan de estudio completo y la conclusión, añade la siguiente sección al final de tu respuesta. Debe seguir este formato YAML estricto.
+
+**Instrucciones para esta sección:**
+- Extrae de 3 a 5 de los temas más críticos de los `errores_frecuentes` y `areas_mejora`.
+- Convierte cada tema en una consulta de búsqueda efectiva en francés (palabras clave).
+- Asigna el `level` correspondiente al `nivel_alcanzado` en el feedback.
+- Asigna la `competency` más relevante (`grammaire`, `vocabulaire`, `expression écrite`).
+
+```yaml
+---
+### TEMAS_PARA_INVESTIGAR
+- topic: "accord sujet verbe pluriel"
+  level: "A2"
+  competency: "grammaire"
+- topic: "articles définis élision"
+  level: "A2"
+  competency: "grammaire"
+- topic: "connecteurs logiques simples"
+  level: "A2"
+  competency: "expression écrite"
+```
+
+
 ## EJEMPLO DE OUTPUT
 
 ```markdown

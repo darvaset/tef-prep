@@ -17,6 +17,7 @@ import os
 from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
+import re
 
 # Cargar variables de entorno desde config/.env
 load_dotenv(dotenv_path=Path('config/.env'))
@@ -257,27 +258,21 @@ class TEFSystem:
             return {"status": "error", "message": f"Error inesperado: {str(e)}"}
 
     def improve_plan(self, feedback_file):
-        """Genera un plan de mejora a partir de un archivo de feedback"""
+        """Genera un plan de mejora a partir de un archivo de feedback y le añade recursos."""
         print(f"🚀 Iniciando generación de plan de mejora...")
         print(f"   📄 Archivo de feedback: {feedback_file}")
 
-        # 1. Validar archivo de feedback
         if not self.validate_input_file(feedback_file):
             return {"status": "error", "message": "Archivo de feedback inválido"}
 
         try:
-            # 2. Cargar configuración del agente
             agent_config = self.config["agents"]["tef-improvement-advisor"]
             if not agent_config.get("enabled", False):
-                msg = "El agente TEF Improvement Advisor está deshabilitado."
-                print(f"⚠️  {msg}")
-                return {"status": "disabled", "message": msg}
+                return {"status": "disabled", "message": "El agente TEF Improvement Advisor está deshabilitado."}
 
-            # 3. Leer contenido del feedback
             with open(feedback_file, 'r', encoding='utf-8') as f:
                 feedback_data = json.load(f)
 
-            # 4. Instanciar y ejecutar el agente
             print("   🤖 Ejecutando TEF Improvement Advisor...")
             advisor = TEFImprovementAdvisor(config=agent_config)
             result = advisor.generate_plan(feedback_data)
@@ -286,10 +281,31 @@ class TEFSystem:
                 print(f"   ❌ Error al generar el plan: {result.get('message')}")
                 return result
 
-            # 5. Guardar el plan generado
             plan_content = result.get("plan", "")
             
-            # Usar el nombre base del archivo de feedback para el plan
+            print("   🤖 Extrayendo temas de investigación del plan...")
+            research_topics = self._parse_research_topics(plan_content)
+
+            if research_topics:
+                plan_content = re.sub(r"```yaml.*?```", "", plan_content, flags=re.DOTALL).strip()
+                
+                print("   🔍 Buscando recursos recomendados (esto puede tardar unos segundos)...")
+                collected_resources = []
+                for topic_data in research_topics:
+                    print(f"      - Buscando sobre: '{topic_data['topic']}'...")
+                    research_result = self.research_resources(
+                        topic=topic_data['topic'],
+                        level=topic_data['level'],
+                        competency=topic_data['competency']
+                    )
+                    collected_resources.append({
+                        "topic_info": topic_data,
+                        "results": research_result.get("results", [])
+                    })
+                
+                resources_markdown = self._format_resources_for_markdown(collected_resources)
+                plan_content += resources_markdown
+
             base_name = Path(feedback_file).stem.replace("feedback_", "")
             output_filename = f"{base_name}_study_plan.md"
             output_file = self.outputs_path / "study_plans" / output_filename
@@ -299,21 +315,67 @@ class TEFSystem:
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(plan_content)
 
-            print(f"   ✅ Plan de estudio generado.")
+            print(f"   ✅ Plan de estudio enriquecido con recursos.")
             print(f"   💾 Guardado en: {output_file}")
             
             return {"status": "success", "plan_file": str(output_file)}
 
         except KeyError:
-            msg = "Configuración para 'tef-improvement-advisor' no encontrada."
-            print(f"❌ Error: {msg}")
+            msg = "Configuración para 'tef-improvement-advisor' o 'tef-resource-researcher' no encontrada."
             return {"status": "error", "message": msg}
         except json.JSONDecodeError:
             return {"status": "error", "message": f"Error: El archivo de feedback '{feedback_file}' no es un JSON válido."}
         except Exception as e:
-            print(f"❌ Error inesperado en el flujo de mejora: {str(e)}")
-            return {"status": "error", "message": f"Error inesperado: {str(e)}"}
-    
+            return {"status": "error", "message": f"Error inesperado en el flujo de mejora: {e}"}
+
+    def _parse_research_topics(self, plan_content: str) -> list:
+        """Extrae y parsea el bloque YAML de temas para investigar."""
+        topics = []
+        match = re.search(r"```yaml\s*\n---\s*\n###\s*TEMAS_PARA_INVESTIGAR\s*\n(.*?)\s*```", plan_content, re.DOTALL)
+        
+        if not match:
+            return []
+
+        yaml_content = match.group(1).strip()
+        
+        current_topic = {}
+        for line in yaml_content.split('\n'):
+            line = line.strip()
+            if line.startswith('- topic:'):
+                if current_topic:
+                    topics.append(current_topic)
+                current_topic = {'topic': line.split(':', 1)[1].strip().strip('"')}
+            elif line.startswith('level:'):
+                current_topic['level'] = line.split(':', 1)[1].strip().strip('"')
+            elif line.startswith('competency:'):
+                current_topic['competency'] = line.split(':', 1)[1].strip().strip('"')
+                
+        if current_topic:
+            topics.append(current_topic)
+            
+        return topics
+
+    def _format_resources_for_markdown(self, collected_resources: list) -> str:
+        """Formatea la lista de recursos encontrados en una sección Markdown."""
+        if not collected_resources:
+            return ""
+
+        markdown_section = "\n\n---\n\n## 📚 Recursos Recomendados\n"
+        
+        for resource_group in collected_resources:
+            info = resource_group['topic_info']
+            results = resource_group['results']
+            
+            markdown_section += f"\n### {info['competency'].capitalize()}: {info['topic'].capitalize()} (Nivel {info['level']})\n"
+            
+            if results:
+                for res in results[:3]:
+                    markdown_section += f"- [{res['title']}]({res['link']})\n"
+            else:
+                markdown_section += "- No se encontraron recursos específicos para este tema.\n"
+                
+        return markdown_section
+        
     def display_status(self):
         """Muestra el estado completo del sistema"""
         print("📊 TEF PREPARATION SYSTEM - STATUS REPORT")

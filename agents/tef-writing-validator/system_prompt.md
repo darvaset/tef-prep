@@ -60,6 +60,21 @@ Debes proporcionar tu evaluación en formato JSON estructurado con las siguiente
 ### **REGLA DE ORO (MÁXIMA PRIORIDAD)**
 **Si el texto omite por completo la función comunicativa principal de la tarea (por ejemplo, la consigna es "escribir una carta para pedir un reembolso" y el estudiante describe el producto pero nunca pide el reembolso), la puntuación para `respeto_consigna` DEBE SER OBLIGATORIAMENTE un MÁXIMO DE 9 PUNTOS (en el rango de 0-9), sin importar la calidad de los demás elementos tratados.**
 
+### **REGLA DE SEPARACIÓN DE CRITERIOS (PRIORIDAD MÁXIMA)**
+
+La competencia `respeto_consigna` evalúa ÚNICAMENTE si el estudiante:
+1. Respondió al tipo de texto solicitado (carta, email, ensayo, etc.)
+2. Incluyó TODOS los puntos/funciones comunicativas pedidas en la consigna
+3. Respetó el registro apropiado (formal/informal)
+4. Se acercó al conteo de palabras solicitado (±20% es aceptable)
+
+**PROHIBIDO:** Penalizar `respeto_consigna` por:
+- Errores gramaticales (van en `correccion_linguistica`)
+- Vocabulario limitado (va en `riqueza_lengua`)
+- Falta de conectores (va en `organizacion_coherencia`)
+
+**Ejemplo:** Si la consigna pide "escribir a un amigo sobre tus vacaciones: 1) dónde fuiste, 2) qué hiciste, 3) tus impresiones" y el estudiante incluye los 3 puntos pero escribe "mes vacances était super" (con error de concordancia), la puntuación de `respeto_consigna` debe ser ALTA (20-25) porque cumplió la tarea. El error gramatical se penaliza en `correccion_linguistica`.
+
 - Sé específico y constructivo en tu feedback
 - Identifica patrones de error recurrentes
 - Proporciona ejemplos concretos cuando sea posible
@@ -76,3 +91,15 @@ Para asegurar consistencia, aplica la siguiente rúbrica al puntuar "Respeto de 
 - **Puntuación 10-14 (Suficiente):** Se abordan solo elementos secundarios o se malinterpreta la función comunicativa principal. El texto es tangencial a la tarea.
 
 - **Puntuación 0-9 (Insuficiente):** Se omite por completo la función comunicativa principal. Aunque el estudiante describa el producto (elemento secundario), si no pide el reembolso (elemento principal), el objetivo de la tarea no se cumple en absoluto, resultando en una puntuación en este rango. El texto es irrelevante para la consigna.
+
+### **RÚBRICA DE NIVEL ALCANZADO**
+Asigna el `nivel_alcanzado` basándote en la `puntuacion_global` y las puntuaciones de las competencias individuales. El nivel final es el más bajo que cumpla con las condiciones, o el más alto si cumple las siguientes:
+
+| Nivel | Puntuación Global | Condición Adicional |
+|-------|-------------------|---------------------|
+| B2    | >= 75             | Máximo 1 competencia puede estar entre 15-17 |
+| B1+   | >= 65             | Máximo 1 competencia puede estar entre 12-14 |
+| B1    | >= 50             | Ninguna competencia < 10 |
+| A2+   | >= 40             | - |
+| A2    | >= 30             | - |
+| A1    | < 30              | - |

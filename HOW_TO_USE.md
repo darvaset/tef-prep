@@ -57,7 +57,7 @@ El comando imprime en la consola una lista de hasta 10 URLs de recursos de alta 
 
 ### 3. `improve`
 
-**Propósito:** Genera un plan de estudio personalizado a partir de un archivo de feedback JSON.
+**Propósito:** Genera un plan de estudio personalizado y **enriquecido con recursos educativos recomendados** a partir de un archivo de feedback JSON. Este comando orquesta la inteligencia del `Improvement Advisor` con la capacidad de búsqueda del `Resource Researcher`.
 
 **Uso:**
 ```bash
@@ -69,8 +69,23 @@ python tef_system.py improve --feedback RUTA_AL_FEEDBACK.json
 
 **Ejemplo:**
 ```bash
-python tef_system.py improve --feedback="outputs/feedback/20251202_215545_feedback_test_consigna_non_respectee.json"
+python tef_system.py improve --feedback="outputs/feedback/20251203_204559_feedback_texto1_a2.json"
 ```
 
 **Resultado:**
-Genera un archivo Markdown (`.md`) con un plan de estudio detallado de 3 semanas en la carpeta `outputs/study_plans/`. El plan se enfoca en las áreas de mejora y errores identificados en el feedback.
+Genera un archivo Markdown (`.md`) con un plan de estudio detallado de 3 semanas en la carpeta `outputs/study_plans/`. El plan se enfoca en las áreas de mejora y errores identificados en el feedback, y **al final del archivo incluirá una sección `## 📚 Recursos Recomendados` con enlaces a recursos online relevantes.**
+
+```markdown
+...
+---
+
+## 📚 Recursos Recomendados
+
+### Grammaire: Accord adjectif nom genre nombre (Nivel A2)
+- [Título del recurso 1](URL1)
+- [Título del recurso 2](URL2)
+
+### Grammaire: Accord sujet verbe passé composé (Nivel A2)
+- [Título del recurso 1](URL1)
+- ...
+```

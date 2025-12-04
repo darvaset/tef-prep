@@ -1,0 +1,37 @@
+{
+  "nivel_evaluado": "A2",
+  "puntuacion_global": 58,
+  "competencias": {
+    "respeto_consigna": 22,
+    "correccion_linguistica": 12,
+    "riqueza_lengua": 14,
+    "organizacion_coherencia": 10
+  },
+  "puntos_fuertes": [
+    "El texto responde a una solicitud implícita de compartir experiencias de vacaciones con un amigo.",
+    "Se utiliza un registro informal apropiado para un amigo.",
+    "Hay una buena variedad de actividades y lugares mencionados (nadar, comer tacos, hotel, ruinas mayas)."
+  ],
+  "areas_mejora": [
+    "La corrección lingüística es el punto más débil, con errores frecuentes de gramática y concordancia.",
+    "El vocabulario, aunque adecuado para un nivel básico, podría ser más variado y preciso.",
+    "La estructura del texto es simple y la progresión de ideas podría ser más fluida, con una mejor organización de las frases y el uso de conectores.",
+    "La extensión del texto es corta para un nivel más avanzado, pero adecuada para el nivel actual declarado."
+  ],
+  "errores_frecuentes": [
+    "Concordancia de género y número: 'mes vacances était super' (debería ser 'mes vacances étaient super'), 'le hotel était très joli' (debería ser 'l'hôtel était très joli'), 'le personnel très amable' (debería ser 'le personnel très aimable').",
+    "Uso de artículos: 'Le hotel' en lugar de 'L'hôtel'.",
+    "Ortografía: 'delicieux' (debería ser 'délicieux').",
+    "Concordancia verbal: 'mes vacances était' en lugar de 'mes vacances étaient'."
+  ],
+  "recomendaciones": [
+    "Repasar las reglas de concordancia de género y número, especialmente entre el sustantivo y el adjetivo, y entre el sujeto y el verbo.",
+    "Practicar la conjugación de los verbos en el pasado compuesto y el imperfecto, prestando atención a las terminaciones.",
+    "Estudiar el uso correcto de los artículos definidos e indefinidos, incluyendo las contracciones y la elisión.",
+    "Ampliar el vocabulario relacionado con viajes y experiencias, buscando sinónimos y expresiones más específicas.",
+    "Practicar la escritura de frases más complejas y el uso de conectores básicos para enlazar ideas (ej. 'et', 'mais', 'parce que', 'donc').",
+    "Revisar textos escritos prestando atención a la ortografía y la puntuación."
+  ],
+  "nivel_alcanzado": "A2+",
+  "siguiente_paso": "Consolidar las bases gramaticales y ortográficas, enfocándose en la corrección de los errores recurrentes identificados, para poder avanzar hacia el nivel B1 con mayor solidez."
+}

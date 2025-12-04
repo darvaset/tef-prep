@@ -1,0 +1,37 @@
+{
+  "nivel_evaluado": "B1",
+  "puntuacion_global": 73,
+  "competencias": {
+    "respeto_consigna": 20,
+    "correccion_linguistica": 17,
+    "riqueza_lengua": 18,
+    "organizacion_coherencia": 18
+  },
+  "puntos_fuertes": [
+    "El texto responde claramente a la consigna de reclamar por un error en un pedido.",
+    "La función comunicativa principal (informar del problema, solicitar el producto correcto y preguntar por la devolución) se cumple de forma directa y eficaz.",
+    "La organización del texto es lógica, con una introducción, desarrollo de los hechos y una conclusión clara.",
+    "Se utiliza un registro apropiado para una comunicación formal (carta a un servicio de atención al cliente).",
+    "La ortografía y la puntuación son en su mayoría correctas."
+  ],
+  "areas_mejora": [
+    "Algunas expresiones podrían ser más matizadas o formales para un nivel más alto (ej. 'j'avais besoin de l'ordinateur pour mon travail' podría ser 'cet ordinateur était indispensable pour mon travail').",
+    "La construcción de algunas frases, aunque correctas, carece de cierta fluidez o elegancia que se esperaría en niveles superiores.",
+    "La variedad léxica es adecuada pero podría enriquecerse con sinónimos o expresiones más específicas del ámbito de las compras en línea.",
+    "Hay una ligera imprecisión en la frase 'Si je ne reçois pas une réponse dans les prochains jours', que podría formularse de manera más directa o con una alternativa más educada."
+  ],
+  "errores_frecuentes": [
+    "Uso de 'Aussi' al inicio de frase para añadir un punto, que si bien es comprensible, en un registro formal se prefiere 'De plus' o 'Par ailleurs'.",
+    "La formulación 'je veux savoir' es un poco directa; se podría emplear una forma más cortés como 'je souhaiterais savoir' o 'pourriez-vous m'indiquer'.",
+    "Pequeñas faltas de concordancia o colocación de adjetivos que, aunque no impiden la comprensión, denotan una falta de dominio total de la estructura."
+  ],
+  "recomendaciones": [
+    "Practicar la escritura de correos electrónicos formales, prestando especial atención a las fórmulas de cortesía y a las expresiones para solicitar información o acciones.",
+    "Ampliar el vocabulario relacionado con los trámites administrativos y comerciales (ej. 'remboursement', 'échange', 'facture', 'litige').",
+    "Estudiar y practicar el uso de conectores y marcadores discursivos más variados y adecuados a diferentes registros.",
+    "Revisar las estructuras de las frases para añadir complejidad y fluidez, utilizando subordinadas y otras construcciones gramaticales más elaboradas.",
+    "Prestar atención a las estructuras de condicional y subjuntivo, que aportan matices y cortesía al discurso formal."
+  ],
+  "nivel_alcanzado": "B1+",
+  "siguiente_paso": "Consolidar las estructuras gramaticales y léxico del nivel B1 para empezar a introducir y dominar estructuras más complejas y un registro más matizado, propio del nivel B2, centrándose en la variedad expresiva y la fluidez."
+}
