@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 """
+################################################################################
+#                                                                              #
+#                      ⚠️️   DEPRECATED SCRIPT   ⚠️️                             #
+#                                                                              #
+#   This script is outdated and does not reflect the new monorepo structure.   #
+#   Do not run it. It is kept for historical purposes only.                      #
+#                                                                              #
+################################################################################
+
 TEF Preparation System - Initialization Script
 
 Este script inicializa toda la estructura de carpetas y archivos base 

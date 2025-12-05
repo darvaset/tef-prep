@@ -1,0 +1,268 @@
+2025-11-19 23:41:10,580 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-11-19 23:41:10,580 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B1.
+2025-11-19 23:41:10,580 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-11-19 23:41:10,580 - tef-writing-validator - WARNING - Usando respuesta simulada. El cliente Gemini no está implementado.
+2025-11-19 23:41:10,580 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-11-19 23:41:10,581 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: B2
+2025-12-02 20:17:02,501 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 20:17:02,501 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 20:17:02,501 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B1.
+2025-12-02 20:17:02,501 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 20:17:02,783 - tef-writing-validator - CRITICAL - Ha ocurrido un error crítico durante la evaluación: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/Users/darva/Projects/TEF-Prep/agents/tef_writing_validator.py", line 154, in evaluate
+    response = model.generate_content(final_prompt)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-12-02 20:17:18,156 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 20:17:18,156 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 20:17:18,156 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B1.
+2025-12-02 20:17:18,156 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 20:17:18,374 - tef-writing-validator - CRITICAL - Ha ocurrido un error crítico durante la evaluación: 404 models/gemini-1.0-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/Users/darva/Projects/TEF-Prep/agents/tef_writing_validator.py", line 154, in evaluate
+    response = model.generate_content(final_prompt)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.0-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-12-02 20:17:46,686 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 20:17:46,686 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 20:17:47,073 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B1.
+2025-12-02 20:17:47,073 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 20:17:47,478 - tef-writing-validator - CRITICAL - Ha ocurrido un error crítico durante la evaluación: 404 models/gemini-1.0-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+Traceback (most recent call last):
+  File "/Users/darva/Projects/TEF-Prep/agents/tef_writing_validator.py", line 154, in evaluate
+    response = model.generate_content(final_prompt)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/retry/retry_unary.py", line 147, in retry_target
+    result = target()
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "/Users/darva/Projects/TEF-Prep/venv/lib/python3.14/site-packages/google/api_core/grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.NotFound: 404 models/gemini-1.0-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-12-02 20:18:06,857 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 20:18:06,858 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 20:18:06,858 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B1.
+2025-12-02 20:18:06,858 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 20:18:42,593 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-02 20:18:42,595 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-02 20:50:38,191 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 20:50:38,192 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 20:50:38,192 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B2.
+2025-12-02 20:50:38,192 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 20:50:42,325 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-02 20:50:42,326 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-02 21:27:59,428 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 21:27:59,429 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 21:27:59,429 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel A2.
+2025-12-02 21:27:59,429 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 21:28:03,329 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-02 21:28:03,329 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-02 21:28:17,416 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 21:28:17,416 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 21:28:17,416 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B2.
+2025-12-02 21:28:17,416 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 21:28:20,533 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-02 21:28:20,534 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-02 21:28:29,867 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 21:28:29,867 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 21:28:29,867 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B1.
+2025-12-02 21:28:29,867 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 21:28:32,924 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-02 21:28:32,924 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-02 21:51:19,872 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 21:51:19,872 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 21:51:19,872 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B2.
+2025-12-02 21:51:19,872 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 21:51:23,754 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-02 21:51:23,754 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-02 21:53:54,838 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 21:53:54,839 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 21:53:54,839 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B2.
+2025-12-02 21:53:54,839 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 21:53:57,984 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-02 21:53:57,985 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-02 21:55:43,257 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-02 21:55:43,257 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-02 21:55:43,257 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B2.
+2025-12-02 21:55:43,257 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-02 21:55:45,618 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-02 21:55:45,618 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-03 20:25:36,544 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 20:25:36,545 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 20:25:36,545 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel A2.
+2025-12-03 20:25:36,545 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 20:25:40,885 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 20:25:40,886 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-03 20:26:07,191 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 20:26:07,191 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 20:26:07,192 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B1.
+2025-12-03 20:26:07,192 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 20:26:11,605 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 20:26:11,606 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-03 20:26:21,350 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 20:26:21,350 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 20:26:21,350 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel B2.
+2025-12-03 20:26:21,350 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 20:26:24,466 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 20:26:24,466 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-03 20:45:57,080 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 20:45:57,080 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 20:45:57,080 - tef-writing-validator - INFO - Iniciando evaluación para estudiante de nivel A2.
+2025-12-03 20:45:57,081 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 20:45:59,803 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 20:45:59,803 - tef-writing-validator - INFO - Evaluación completada. Nivel alcanzado: N/A
+2025-12-03 22:18:47,317 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 22:18:47,318 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 22:18:47,318 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-03 22:18:47,318 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 22:18:51,276 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 22:18:51,276 - tef-writing-validator - CRITICAL - Ha ocurrido un error crítico durante la evaluación: 'TEFWritingValidator' object has no attribute '_parse_response'
+Traceback (most recent call last):
+  File "/Users/darva/Projects/TEF-Prep/agents/tef_writing_validator.py", line 144, in evaluate
+    evaluation = self._parse_response(response_text)
+                 ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TEFWritingValidator' object has no attribute '_parse_response'
+2025-12-03 22:19:13,440 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 22:19:13,441 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 22:19:13,441 - tef-writing-validator - INFO - Iniciando evaluación en MODO OBJETIVO para nivel B1.
+2025-12-03 22:19:13,441 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 22:19:18,106 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 22:19:18,106 - tef-writing-validator - CRITICAL - Ha ocurrido un error crítico durante la evaluación: 'TEFWritingValidator' object has no attribute '_parse_response'
+Traceback (most recent call last):
+  File "/Users/darva/Projects/TEF-Prep/agents/tef_writing_validator.py", line 144, in evaluate
+    evaluation = self._parse_response(response_text)
+                 ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TEFWritingValidator' object has no attribute '_parse_response'
+2025-12-03 22:21:39,748 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 22:21:39,748 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 22:21:39,748 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-03 22:21:39,748 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 22:21:43,924 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 22:21:43,925 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: A2
+2025-12-03 22:21:48,586 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 22:21:48,586 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 22:21:48,586 - tef-writing-validator - INFO - Iniciando evaluación en MODO OBJETIVO para nivel B1.
+2025-12-03 22:21:48,586 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 22:21:53,039 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 22:21:53,039 - tef-writing-validator - INFO - Evaluación completada. Modo: objetivo_especifico, Nivel Detectado: A2
+2025-12-03 22:43:51,488 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-03 22:43:51,488 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-03 22:43:51,488 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-03 22:43:51,488 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-03 22:43:55,312 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-03 22:43:55,313 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: A2
+2025-12-04 20:32:00,072 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-04 20:32:00,073 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-04 20:32:00,073 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-04 20:32:00,073 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-04 20:32:03,349 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-04 20:32:03,349 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: A2
+2025-12-04 20:51:18,247 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-04 20:51:18,247 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-04 20:51:18,247 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-04 20:51:18,247 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-04 20:51:20,771 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-04 20:51:20,771 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: A2
+2025-12-04 21:51:06,928 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-04 21:51:06,928 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-04 21:51:06,929 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-04 21:51:06,929 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-04 21:51:11,137 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-04 21:51:11,138 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: A2
+2025-12-04 21:52:05,155 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-04 21:52:05,156 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-04 21:52:05,156 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-04 21:52:05,156 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-04 21:52:08,787 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-04 21:52:08,788 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: B1

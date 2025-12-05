@@ -1,0 +1,230 @@
+2025-12-02 20:37:26,608 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-02 20:37:26,608 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-02 20:37:26,608 - tef-resource-researcher - INFO - Iniciando investigación para 'subjonctif' (Nivel: B2, Competencia: grammaire).
+2025-12-02 20:37:26,608 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'aprender francés subjonctif nivel B2 grammaire ejercicios'
+2025-12-02 20:37:27,254 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 0 resultados.
+2025-12-02 20:40:26,682 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-02 20:40:26,682 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-02 20:40:26,682 - tef-resource-researcher - INFO - Iniciando investigación para 'subjonctif' (Nivel: B2, Competencia: grammaire).
+2025-12-02 20:40:26,682 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés subjonctif B2 grammaire'
+2025-12-02 20:40:27,090 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 21:39:28,785 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 21:39:28,785 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 21:39:28,785 - tef-resource-researcher - INFO - Iniciando investigación para 'accord genre nombre adjectif français' (Nivel: A2, Competencia: grammaire).
+2025-12-03 21:39:28,785 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord genre nombre adjectif français A2 grammaire'
+2025-12-03 21:39:29,282 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 21:39:29,288 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 21:39:29,288 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 21:39:29,288 - tef-resource-researcher - INFO - Iniciando investigación para 'usage articles définis indéfinis français' (Nivel: A2, Competencia: grammaire).
+2025-12-03 21:39:29,288 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés usage articles définis indéfinis français A2 grammaire'
+2025-12-03 21:39:29,738 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 21:39:29,743 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 21:39:29,744 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 21:39:29,744 - tef-resource-researcher - INFO - Iniciando investigación para 'connecteurs logiques simples français' (Nivel: A2, Competencia: expression écrite).
+2025-12-03 21:39:29,744 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés connecteurs logiques simples français A2 expression écrite'
+2025-12-03 21:39:30,165 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 21:39:30,167 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 21:39:30,167 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 21:39:30,167 - tef-resource-researcher - INFO - Iniciando investigación para 'imparfait passé composé exercices' (Nivel: A2, Competencia: grammaire).
+2025-12-03 21:39:30,167 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés imparfait passé composé exercices A2 grammaire'
+2025-12-03 21:39:30,633 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:29:37,734 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:29:37,734 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:29:37,735 - tef-resource-researcher - INFO - Iniciando investigación para 'accord adjectif nom feminin masculin singulier pluriel' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:29:37,735 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord adjectif nom feminin masculin singulier pluriel A2 grammaire'
+2025-12-03 22:29:38,249 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:29:38,255 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:29:38,255 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:29:38,255 - tef-resource-researcher - INFO - Iniciando investigación para 'passé composé imparfait difference' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:29:38,255 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés passé composé imparfait difference A2 grammaire'
+2025-12-03 22:29:38,747 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:29:38,750 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:29:38,750 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:29:38,750 - tef-resource-researcher - INFO - Iniciando investigación para 'prepositions de lieu a en dans' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:29:38,750 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés prepositions de lieu a en dans A2 grammaire'
+2025-12-03 22:29:39,077 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:29:39,082 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:29:39,082 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:29:39,082 - tef-resource-researcher - INFO - Iniciando investigación para 'vocabulaire voyage description' (Nivel: A2, Competencia: vocabulaire).
+2025-12-03 22:29:39,082 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés vocabulaire voyage description A2 vocabulaire'
+2025-12-03 22:29:39,477 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:29:39,483 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:29:39,483 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:29:39,483 - tef-resource-researcher - INFO - Iniciando investigación para 'connecteurs logiques simples français' (Nivel: A2, Competencia: expression écrite).
+2025-12-03 22:29:39,483 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés connecteurs logiques simples français A2 expression écrite'
+2025-12-03 22:29:39,946 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:16,804 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:16,805 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:16,805 - tef-resource-researcher - INFO - Iniciando investigación para 'accord adjectif genre nombre francais' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:38:16,805 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord adjectif genre nombre francais A2 grammaire'
+2025-12-03 22:38:17,251 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:17,257 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:17,257 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:17,257 - tef-resource-researcher - INFO - Iniciando investigación para 'difference passe compose imparfait' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:38:17,257 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés difference passe compose imparfait A2 grammaire'
+2025-12-03 22:38:17,602 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:17,606 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:17,607 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:17,607 - tef-resource-researcher - INFO - Iniciando investigación para 'prepositions de lieu en francais' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:38:17,607 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés prepositions de lieu en francais A2 grammaire'
+2025-12-03 22:38:18,037 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:18,043 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:18,043 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:18,043 - tef-resource-researcher - INFO - Iniciando investigación para 'connecteurs logiques faciles francais' (Nivel: A2, Competencia: expression écrite).
+2025-12-03 22:38:18,043 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés connecteurs logiques faciles francais A2 expression écrite'
+2025-12-03 22:38:18,534 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:18,538 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:18,538 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:18,538 - tef-resource-researcher - INFO - Iniciando investigación para 'vocabulaire voyages et tourisme' (Nivel: A2, Competencia: vocabulaire).
+2025-12-03 22:38:18,538 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés vocabulaire voyages et tourisme A2 vocabulaire'
+2025-12-03 22:38:19,045 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:39,162 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:39,163 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:39,163 - tef-resource-researcher - INFO - Iniciando investigación para 'accord genre et nombre adjectifs' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:38:39,163 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord genre et nombre adjectifs A2 grammaire'
+2025-12-03 22:38:39,562 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:39,567 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:39,568 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:39,568 - tef-resource-researcher - INFO - Iniciando investigación para 'accord participe passé être' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:38:39,568 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord participe passé être A2 grammaire'
+2025-12-03 22:38:39,922 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:39,927 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:39,927 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:39,927 - tef-resource-researcher - INFO - Iniciando investigación para 'passé composé imparfait différence' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:38:39,927 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés passé composé imparfait différence A2 grammaire'
+2025-12-03 22:38:40,444 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:40,450 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:40,451 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:40,451 - tef-resource-researcher - INFO - Iniciando investigación para 'connecteurs logiques français débutant' (Nivel: A2, Competencia: expression écrite).
+2025-12-03 22:38:40,451 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés connecteurs logiques français débutant A2 expression écrite'
+2025-12-03 22:38:40,808 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:38:40,814 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:38:40,814 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:38:40,814 - tef-resource-researcher - INFO - Iniciando investigación para 'prépositions de lieu villes pays' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:38:40,814 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés prépositions de lieu villes pays A2 grammaire'
+2025-12-03 22:38:41,149 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:10,588 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:10,589 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:10,589 - tef-resource-researcher - INFO - Iniciando investigación para 'accord genre nombre adjectif français' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:44:10,589 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord genre nombre adjectif français A2 grammaire'
+2025-12-03 22:44:11,010 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:11,014 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:11,014 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:11,014 - tef-resource-researcher - INFO - Iniciando investigación para 'erreur préposition dans à en français' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:44:11,014 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés erreur préposition dans à en français A2 grammaire'
+2025-12-03 22:44:11,349 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:11,354 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:11,355 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:11,355 - tef-resource-researcher - INFO - Iniciando investigación para 'vocabulaire thématique voyage français' (Nivel: A2, Competencia: vocabulaire).
+2025-12-03 22:44:11,355 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés vocabulaire thématique voyage français A2 vocabulaire'
+2025-12-03 22:44:11,900 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:11,903 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:11,903 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:11,903 - tef-resource-researcher - INFO - Iniciando investigación para 'connecteurs logiques français débutant' (Nivel: A2, Competencia: expression écrite).
+2025-12-03 22:44:11,903 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés connecteurs logiques français débutant A2 expression écrite'
+2025-12-03 22:44:12,295 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:12,300 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:12,300 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:12,300 - tef-resource-researcher - INFO - Iniciando investigación para 'passé composé et présent différence utilisation' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:44:12,300 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés passé composé et présent différence utilisation A2 grammaire'
+2025-12-03 22:44:12,765 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:26,549 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:26,550 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:26,550 - tef-resource-researcher - INFO - Iniciando investigación para 'accord genre et nombre adjectif français' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:44:26,550 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord genre et nombre adjectif français A2 grammaire'
+2025-12-03 22:44:26,926 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:26,931 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:26,932 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:26,932 - tef-resource-researcher - INFO - Iniciando investigación para 'utilisation passé composé imparfait exercices' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:44:26,932 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés utilisation passé composé imparfait exercices A2 grammaire'
+2025-12-03 22:44:27,348 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:27,353 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:27,354 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:27,354 - tef-resource-researcher - INFO - Iniciando investigación para 'prépositions de lieu en français exercices' (Nivel: A2, Competencia: grammaire).
+2025-12-03 22:44:27,354 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés prépositions de lieu en français exercices A2 grammaire'
+2025-12-03 22:44:27,748 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:27,752 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:27,752 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:27,752 - tef-resource-researcher - INFO - Iniciando investigación para 'connecteurs logiques simples français' (Nivel: A2, Competencia: expression écrite).
+2025-12-03 22:44:27,752 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés connecteurs logiques simples français A2 expression écrite'
+2025-12-03 22:44:28,283 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-03 22:44:28,288 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-03 22:44:28,288 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-03 22:44:28,288 - tef-resource-researcher - INFO - Iniciando investigación para 'vocabulaire voyages français thèmes' (Nivel: A2, Competencia: vocabulaire).
+2025-12-03 22:44:28,288 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés vocabulaire voyages français thèmes A2 vocabulaire'
+2025-12-03 22:44:28,795 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:08,108 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:08,109 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:08,109 - tef-resource-researcher - INFO - Iniciando investigación para 'accord sujet verbe pluriel' (Nivel: A2, Competencia: grammaire).
+2025-12-04 20:36:08,109 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord sujet verbe pluriel A2 grammaire'
+2025-12-04 20:36:08,715 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:08,720 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:08,720 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:08,720 - tef-resource-researcher - INFO - Iniciando investigación para 'accord adjectif genre numero' (Nivel: A2, Competencia: grammaire).
+2025-12-04 20:36:08,720 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord adjectif genre numero A2 grammaire'
+2025-12-04 20:36:09,256 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:09,261 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:09,262 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:09,262 - tef-resource-researcher - INFO - Iniciando investigación para 'usage articles définis indéfinis partitifs' (Nivel: A2, Competencia: grammaire).
+2025-12-04 20:36:09,262 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés usage articles définis indéfinis partitifs A2 grammaire'
+2025-12-04 20:36:09,671 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:09,675 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:09,676 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:09,676 - tef-resource-researcher - INFO - Iniciando investigación para 'prépositions de lieu et de temps' (Nivel: A2, Competencia: grammaire).
+2025-12-04 20:36:09,676 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés prépositions de lieu et de temps A2 grammaire'
+2025-12-04 20:36:10,151 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:10,155 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:10,156 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:10,156 - tef-resource-researcher - INFO - Iniciando investigación para 'vocabulaire émotions et sentiments' (Nivel: A2, Competencia: vocabulaire).
+2025-12-04 20:36:10,156 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés vocabulaire émotions et sentiments A2 vocabulaire'
+2025-12-04 20:36:10,497 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:26,331 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:26,332 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:26,332 - tef-resource-researcher - INFO - Iniciando investigación para 'accord sujet verbe français' (Nivel: A2, Competencia: grammaire).
+2025-12-04 20:36:26,332 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord sujet verbe français A2 grammaire'
+2025-12-04 20:36:27,456 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:27,457 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:27,457 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:27,457 - tef-resource-researcher - INFO - Iniciando investigación para 'accord adjectif genre nombre' (Nivel: A2, Competencia: grammaire).
+2025-12-04 20:36:27,457 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord adjectif genre nombre A2 grammaire'
+2025-12-04 20:36:27,799 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:27,801 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:27,801 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:27,802 - tef-resource-researcher - INFO - Iniciando investigación para 'utilisation articles définis indéfinis partitifs' (Nivel: A2, Competencia: grammaire).
+2025-12-04 20:36:27,802 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés utilisation articles définis indéfinis partitifs A2 grammaire'
+2025-12-04 20:36:28,278 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:28,280 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:28,280 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:28,280 - tef-resource-researcher - INFO - Iniciando investigación para 'vocabulaire émotions français' (Nivel: A2, Competencia: vocabulaire).
+2025-12-04 20:36:28,280 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés vocabulaire émotions français A2 vocabulaire'
+2025-12-04 20:36:28,684 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 20:36:28,686 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 20:36:28,686 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 20:36:28,686 - tef-resource-researcher - INFO - Iniciando investigación para 'connecteurs logiques simples français' (Nivel: A2, Competencia: expression écrite).
+2025-12-04 20:36:28,686 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés connecteurs logiques simples français A2 expression écrite'
+2025-12-04 20:36:29,047 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 21:52:14,123 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:14,124 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:14,125 - tef-resource-researcher - INFO - Iniciando investigación para 'expression de la plainte formelle' (Nivel: B1, Competencia: expression écrite).
+2025-12-04 21:52:14,125 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés expression de la plainte formelle B1 expression écrite'
+2025-12-04 21:52:14,654 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 1 resultados.
+2025-12-04 21:52:14,660 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:14,660 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:14,660 - tef-resource-researcher - INFO - Iniciando investigación para 'vocabulaire technique électroménager' (Nivel: B1, Competencia: vocabulaire).
+2025-12-04 21:52:14,660 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés vocabulaire technique électroménager B1 vocabulaire'
+2025-12-04 21:52:15,241 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 4 resultados.
+2025-12-04 21:52:15,247 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:15,247 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:15,247 - tef-resource-researcher - INFO - Iniciando investigación para 'accord verbe sujet exercices' (Nivel: B1, Competencia: grammaire).
+2025-12-04 21:52:15,247 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord verbe sujet exercices B1 grammaire'
+2025-12-04 21:52:15,623 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 21:52:15,629 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:15,630 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:15,630 - tef-resource-researcher - INFO - Iniciando investigación para 'usage prépositions concernant à propos de' (Nivel: B1, Competencia: grammaire).
+2025-12-04 21:52:15,630 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés usage prépositions concernant à propos de B1 grammaire'
+2025-12-04 21:52:16,058 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 21:52:16,064 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:16,064 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:16,064 - tef-resource-researcher - INFO - Iniciando investigación para 'conditionnel présent pour souhaiter' (Nivel: B1, Competencia: grammaire).
+2025-12-04 21:52:16,064 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés conditionnel présent pour souhaiter B1 grammaire'
+2025-12-04 21:52:16,398 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.

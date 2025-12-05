@@ -1,0 +1,225 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+TEF Writing Validator Agent
+
+Este agente evalúa un texto en francés según los criterios del TEF,
+utilizando la API de Google Gemini para el análisis.
+
+Autor: Diego | QA Engineering Manager
+Fecha: Noviembre 2025
+"""
+
+import json
+import logging
+import os
+from pathlib import Path
+import datetime
+from dotenv import load_dotenv
+import google.generativeai as genai
+
+class TEFWritingValidator:
+    """
+    Agente para evaluar escritos en francés para el TEF.
+    """
+    def __init__(self, config: dict, logger: logging.Logger = None):
+        """
+        Inicializa el validador.
+
+        Args:
+            config (dict): Configuración del agente desde system.json.
+            logger (logging.Logger, optional): Logger para el agente.
+        """
+        self.config = config
+        self.agent_name = "tef-writing-validator"
+        
+        if logger:
+            self.logger = logger
+        else:
+            self._setup_logging()
+
+        self.system_prompt = self._load_system_prompt()
+        self._setup_gemini()
+        
+        self.logger.info("TEF Writing Validator inicializado correctamente.")
+
+    def _setup_logging(self):
+        """Configura el sistema de logging para este agente."""
+        self.logger = logging.getLogger(self.agent_name)
+        self.logger.setLevel(logging.INFO)
+        
+        log_dir = Path("data/logs/agents")
+        log_dir.mkdir(parents=True, exist_ok=True)
+        
+        handler = logging.FileHandler(log_dir / f"{self.agent_name}.log", mode='a', encoding='utf-8')
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        handler.setFormatter(formatter)
+        
+        if not self.logger.handlers:
+            self.logger.addHandler(handler)
+
+    def _setup_gemini(self):
+        """Configura el cliente de la API de Gemini."""
+        try:
+            load_dotenv(dotenv_path=Path("core/config/.env"))
+            api_key = os.getenv("GEMINI_API_KEY")
+            if not api_key or api_key == "your_gemini_api_key_here":
+                self.logger.error("La API Key de Gemini no está configurada en config/.env")
+                raise ValueError("API Key de Gemini no encontrada.")
+            
+            genai.configure(api_key=api_key)
+            self.logger.info("Cliente de Gemini API configurado.")
+        except Exception as e:
+            self.logger.error(f"Error configurando Gemini: {e}")
+            raise
+
+    def _load_system_prompt(self) -> str:
+        """Carga el system prompt desde el archivo .md."""
+        prompt_path = Path("core/agents") / self.agent_name / "system_prompt.md"
+        try:
+            with open(prompt_path, "r", encoding="utf-8") as f:
+                return f.read()
+        except FileNotFoundError:
+            self.logger.error(f"System prompt no encontrado en: {prompt_path}")
+            raise
+        except Exception as e:
+            self.logger.error(f"Error cargando system prompt: {e}")
+            raise
+
+    def _parse_response(self, response_text: str) -> dict:
+        """Parsea la respuesta JSON del modelo, con manejo de errores."""
+        try:
+            # Limpiar el string de respuesta para asegurar que solo contenga JSON
+            json_str = response_text.strip()
+            if json_str.startswith("```json"):
+                json_str = json_str[7:]
+            if json_str.endswith("```"):
+                json_str = json_str[:-3]
+            
+            return json.loads(json_str.strip())
+        except json.JSONDecodeError as e:
+            self.logger.error(f"Error decodificando JSON de la respuesta: {e}")
+            self.logger.debug(f"Respuesta recibida: {response_text}")
+            raise ValueError("La respuesta del modelo no es un JSON válido.")
+        except Exception as e:
+            self.logger.error(f"Error inesperado al parsear la respuesta: {e}")
+            raise
+
+    def evaluate(self, student_text: str, student_level: str = None, target_level: str = None) -> dict:
+        """
+        Evalúa el texto de un estudiante en uno de dos modos:
+        1. Detección Automática: Si no se provee student_level.
+        2. Evaluación contra Objetivo: Si se provee student_level.
+
+        Args:
+            student_text (str): El texto a evaluar.
+            student_level (str, optional): El nivel objetivo para la evaluación. Si es None, se activa la detección.
+            target_level (str, optional): Nivel que el estudiante aspira a alcanzar (histórico, puede ser deprecado).
+
+        Returns:
+            dict: Un diccionario con la evaluación estructurada.
+        """
+        if student_level:
+            self.logger.info(f"Iniciando evaluación en MODO OBJETIVO para nivel {student_level}.")
+            user_prompt = f"""
+**MODO**: objetivo_especifico
+**NIVEL OBJETIVO**: {student_level}
+
+**Texto del estudiante:**
+---
+{student_text}
+---
+
+**Instrucciones:**
+1.  Evalúa el texto proporcionado basándote estrictamente en los criterios y rúbricas de tu rol.
+2.  Devuelve la evaluación completa en el formato JSON especificado, sin añadir ningún texto o explicación fuera del JSON.
+"""
+        else:
+            self.logger.info("Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.")
+            user_prompt = f"""
+**MODO**: deteccion_automatica
+
+**Texto del estudiante:**
+---
+{student_text}
+---
+
+**Instrucciones:**
+1.  Realiza el análisis y la evaluación siguiendo las instrucciones de tu rol para el modo de detección automática.
+2.  Devuelve la evaluación completa en el formato JSON especificado, sin añadir ningún texto o explicación fuera del JSON.
+"""
+
+        final_prompt = self.system_prompt + user_prompt
+        
+        try:
+            self.logger.info("Enviando petición a la API de Gemini.")
+            
+            model = genai.GenerativeModel(self.config.get("model", "gemini-pro"))
+            response = model.generate_content(final_prompt)
+            
+            response_text = response.text
+            self.logger.info("Respuesta recibida de la API.")
+            
+            evaluation = self._parse_response(response_text)
+            
+            self.logger.info(f"Evaluación completada. Modo: {evaluation.get('modo_evaluacion')}, Nivel Detectado: {evaluation.get('nivel_detectado', 'N/A')}")
+            return evaluation
+
+        except Exception as e:
+            self.logger.critical(f"Ha ocurrido un error crítico durante la evaluación: {e}", exc_info=True)
+            return {
+                "error": True,
+                "message": str(e),
+                "details": "No se pudo completar la evaluación debido a un error con la API de Gemini o un problema interno."
+            }
+
+if __name__ == '__main__':
+    # Este bloque es para pruebas directas del agente
+    print("🧪  Ejecutando prueba del TEF Writing Validator...")
+    
+    # Cargar configuración del sistema
+    try:
+        with open("core/config/system.json", "r", encoding="utf-8") as f:
+            full_config = json.load(f)
+        agent_config = full_config["agents"]["tef-writing-validator"]
+    except (FileNotFoundError, KeyError) as e:
+        print(f"❌ Error: No se pudo cargar la configuración del agente. {e}")
+        exit(1)
+
+    # Inicializar validador
+    try:
+        validator = TEFWritingValidator(config=agent_config)
+    except ValueError as e:
+        print(f"❌ Error de inicialización: {e}")
+        print("    Asegúrate de que tu GEMINI_API_KEY es correcta en core/config/.env")
+        exit(1)
+    
+    # Cargar texto de ejemplo
+    try:
+        with open("data/inputs/student_writings/exemple_lettre_b2.txt", "r", encoding="utf-8") as f:
+            sample_text = f.read()
+    except FileNotFoundError:
+        print("❌ Error: Archivo de texto de ejemplo no encontrado.")
+        exit(1)
+        
+    # Ejecutar evaluación
+    print("\n" + "="*50)
+    print("🚀 Ejecutando evaluación con el modelo configurado...")
+    result = validator.evaluate(
+        student_text=sample_text,
+        student_level="B1",
+        target_level="B2"
+    )
+    
+    # Imprimir resultado
+    print("\n" + "="*50)
+    if result.get("error"):
+        print("❌ Evaluación de prueba fallida.")
+    else:
+        print("✅ Evaluación de prueba completada.")
+    print(json.dumps(result, indent=2, ensure_ascii=False))
+    print("="*50)
+    
+    log_file = Path("data/logs/agents/tef-writing-validator.log")
+    if log_file.exists():
+        print(f"\n📄 Log de la prueba disponible en: {log_file}")

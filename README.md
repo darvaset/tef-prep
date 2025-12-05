@@ -48,38 +48,42 @@ El sistema opera mediante workflows que coordinan la interacción entre agentes:
 1. **Complete Evaluation Workflow**: (Pendiente de implementación completa)
 2. **Evaluación + Plan de Mejora Enriquecido**: El comando `improve` ahora orquesta la evaluación del Validator, la creación del plan del Advisor y la búsqueda de recursos del Researcher, todo en un flujo integrado.
 
-## 🚀 Uso Rápido
+## 🚀 Quick Start
 
 ```bash
-# Inicializar la estructura del proyecto
-python init_project.py
+# Instalación
+git clone [repo]
+cd TEF-Prep
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
 
-# Evaluar un escrito (modo detección automática)
-python tef_system.py evaluate --input="inputs/student_writings/mi_ensayo.txt"
+# Configurar API key en core/config/.env
 
-# Evaluar un escrito (modo objetivo específico)
-python tef_system.py evaluate --input="inputs/student_writings/mi_ensayo.txt" --level="B2"
+# Opción 1: CLI
+python -m core.tef_system evaluate --input="data/inputs/student_writings/example.txt"
 
-# Generar plan de mejora enriquecido (modo normal)
-python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json"
-
-# Generar plan de mejora enriquecido (modo intensivo)
-python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json" --mode="intensive"
-
-# Investigar recursos para un tema específico (uso directo)
-python tef_system.py research --topic="subjuntivo" --level="B2"
+# Opción 2: Web UI
+streamlit run streamlit/app.py
 ```
 
-## 📁 Estructura del Proyecto
+## Features
+- ✅ Detección automática de nivel CEFR (A1-C2)
+- ✅ Evaluación detallada con 4 competencias TEF
+- ✅ Planes de estudio personalizados (Normal/Intensivo)
+- ✅ Búsqueda automática de recursos educativos
+- ✅ Interfaz web con Streamlit
+
+## 📁 Project Structure
 
 ```
-tef-preparation-system/
-├── agents/                    # Configuración de agentes especializados
-├── workflows/                 # Definición de procesos automatizados
-├── inputs/                    # Archivos de entrada (escritos de estudiantes)
-├── outputs/                   # Resultados (feedback, planes, recursos)
-├── logs/                      # Registro de operaciones del sistema
-└── scripts/                   # Herramientas de utilidad y administración
+TEF-Prep/
+├── core/                # Business logic
+│   ├── agents/          # AI agents (Validator, Advisor, Researcher)
+│   ├── config/          # Configuration files
+│   └── tef_system.py    # Main orchestrator
+├── streamlit/           # Web UI
+├── data/                # Data files
+└── docs/                # Documentation
 ```
 
 ## 🛠️ Tecnologías
@@ -100,7 +104,7 @@ tef-preparation-system/
 
 1. Clonar el repositorio
 2. Ejecutar el script de inicialización: `python init_project.py`
-3. Configurar API keys en `.env`
+3. Configurar API keys en `core/config/.env`
 4. Poblar la knowledge base con ejemplos y guías TEF
 
 ## 🎓 Casos de Uso
