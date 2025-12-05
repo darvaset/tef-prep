@@ -13,19 +13,19 @@ Workflow completo que toma un escrito de estudiante y produce feedback detallado
 ### 2. Evaluación (TEF Writing Validator)
 - Analizar el escrito según criterios TEF
 - Generar feedback estructurado
-- Guardar resultado en `outputs/feedback/`
+- Guardar resultado en `data/outputs/feedback/`
 
 ### 3. Análisis de Mejora (TEF Improvement Advisor)  
 - Procesar feedback del validator
 - Identificar patrones y prioridades
 - Generar plan de estudio personalizado
-- Guardar plan en `outputs/study_plans/`
+- Guardar plan en `data/outputs/study_plans/`
 
 ### 4. Investigación de Recursos (TEF Resource Researcher)
 - Extraer temas de mejora del plan
 - Buscar recursos específicos online
 - Validar y curar recomendaciones
-- Guardar recursos en `outputs/resources/`
+- Guardar recursos en `data/outputs/resources/`
 
 ### 5. Consolidación
 - Compilar todos los resultados
@@ -60,5 +60,5 @@ Workflow completo que toma un escrito de estudiante y produce feedback detallado
 ## Ejemplo de Uso
 
 ```bash
-python tef_system.py complete-evaluation   --input="inputs/student_writings/ensayo_001.txt"   --student-level="B1"   --target-level="B2"   --urgency="normal"
+python -m core.tef_system complete-evaluation   --input="data/inputs/student_writings/ensayo_001.txt"   --student-level="B1"   --target-level="B2"   --urgency="normal"
 ```

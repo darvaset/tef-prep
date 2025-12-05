@@ -48,72 +48,42 @@ El sistema opera mediante workflows que coordinan la interacción entre agentes:
 1. **Complete Evaluation Workflow**: (Pendiente de implementación completa)
 2. **Evaluación + Plan de Mejora Enriquecido**: El comando `improve` ahora orquesta la evaluación del Validator, la creación del plan del Advisor y la búsqueda de recursos del Researcher, todo en un flujo integrado.
 
-## 🚀 Uso Rápido
+## 🚀 Quick Start
 
 ```bash
-# Inicializar la estructura del proyecto
-python init_project.py
+# Instalación
+git clone [repo]
+cd TEF-Prep
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
 
-# Evaluar un escrito (modo detección automática)
-python -m core.tef_system evaluate --input="data/inputs/student_writings/mi_ensayo.txt"
+# Configurar API key en core/config/.env
 
-# Evaluar un escrito (modo objetivo específico)
-python -m core.tef_system evaluate --input="data/inputs/student_writings/mi_ensayo.txt" --level="B2"
+# Opción 1: CLI
+python -m core.tef_system evaluate --input="data/inputs/student_writings/example.txt"
 
-# Generar plan de mejora enriquecido (modo normal)
-python -m core.tef_system improve --feedback="data/outputs/feedback/mi_feedback.json"
-
-# Generar plan de mejora enriquecido (modo intensivo)
-python -m core.tef_system improve --feedback="data/outputs/feedback/mi_feedback.json" --mode="intensive"
-
-# Investigar recursos para un tema específico (uso directo)
-python -m core.tef_system research --topic="subjuntivo" --level="B2"
+# Opción 2: Web UI
+streamlit run streamlit/app.py
 ```
 
-## 📁 Estructura del Proyecto
+## Features
+- ✅ Detección automática de nivel CEFR (A1-C2)
+- ✅ Evaluación detallada con 4 competencias TEF
+- ✅ Planes de estudio personalizados (Normal/Intensivo)
+- ✅ Búsqueda automática de recursos educativos
+- ✅ Interfaz web con Streamlit
+
+## 📁 Project Structure
 
 ```
 TEF-Prep/
-├── core/                    # El "cerebro" - lógica actual (PROTEGIDO)
-│   ├── agents/              # Mover de ./agents/
-│   ├── config/              # Mover de ./config/
-│   ├── scripts/             # Mover de ./scripts/
-│   ├── workflows/           # Mover de ./workflows/
-│   ├── tef_system.py        # Mover de ./tef_system.py
-│   ├── requirements.txt     # Core dependencies only
-│   └── __init__.py          # Nuevo - hacer exportable
-│
-├── api/                     # FastAPI wrapper (futuro)
-│   ├── main.py              # Placeholder
-│   ├── routes/
-│   └── requirements.txt
-│
-├── streamlit/               # MVP UI (próximo paso)
-│   ├── app.py               # Placeholder
-│   ├── components/
-│   └── requirements.txt
-│
-├── data/                    # Datos compartidos
-│   ├── inputs/              # Mover de ./inputs/
-│   ├── outputs/             # Mover de ./outputs/
-│   └── logs/                # Mover de ./logs/
-│
-├── tests/                   # Tests (mantener en raíz)
-│   ├── core/
-│   ├── api/
-│   └── streamlit/
-│
-├── docs/                    # Documentación
-│   ├── GEMINI_LOG.md
-│   ├── HOW_TO_USE.md
-│   ├── NEXT_STEPS.md
-│   ├── ROADMAP.md
-│   └── ARCHITECTURE.md      # Nuevo - describir la estructura
-│
-├── README.md                # Mantener en raíz
-├── requirements.txt         # Root deps (para dev completo)
-├── .gitignore
-└── pyproject.toml           # Opcional - para packaging futuro
+├── core/                # Business logic
+│   ├── agents/          # AI agents (Validator, Advisor, Researcher)
+│   ├── config/          # Configuration files
+│   └── tef_system.py    # Main orchestrator
+├── streamlit/           # Web UI
+├── data/                # Data files
+└── docs/                # Documentation
 ```
 
 ## 🛠️ Tecnologías

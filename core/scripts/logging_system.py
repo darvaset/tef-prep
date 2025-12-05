@@ -20,7 +20,7 @@ class TEFLogger:
             level=logging.INFO,
             format=log_format,
             handlers=[
-                logging.FileHandler(f"logs/agents/{self.agent_name}.log"),
+                logging.FileHandler(f"data/logs/agents/{self.agent_name}.log"),
                 logging.StreamHandler()
             ]
         )
@@ -37,7 +37,7 @@ class TEFLogger:
         }
         
         # Guardar en archivo JSON para análisis
-        log_file = Path(f"logs/agents/{self.agent_name}_detailed.json")
+        log_file = Path(f"data/logs/agents/{self.agent_name}_detailed.json")
         
         # Leer logs existentes si existen
         logs = []

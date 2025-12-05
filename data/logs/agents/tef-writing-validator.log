@@ -248,3 +248,21 @@ AttributeError: 'TEFWritingValidator' object has no attribute '_parse_response'
 2025-12-04 20:32:00,073 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
 2025-12-04 20:32:03,349 - tef-writing-validator - INFO - Respuesta recibida de la API.
 2025-12-04 20:32:03,349 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: A2
+2025-12-04 20:51:18,247 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-04 20:51:18,247 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-04 20:51:18,247 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-04 20:51:18,247 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-04 20:51:20,771 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-04 20:51:20,771 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: A2
+2025-12-04 21:51:06,928 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-04 21:51:06,928 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-04 21:51:06,929 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-04 21:51:06,929 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-04 21:51:11,137 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-04 21:51:11,138 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: A2
+2025-12-04 21:52:05,155 - tef-writing-validator - INFO - Cliente de Gemini API configurado.
+2025-12-04 21:52:05,156 - tef-writing-validator - INFO - TEF Writing Validator inicializado correctamente.
+2025-12-04 21:52:05,156 - tef-writing-validator - INFO - Iniciando evaluación en MODO DETECCIÓN AUTOMÁTICA.
+2025-12-04 21:52:05,156 - tef-writing-validator - INFO - Enviando petición a la API de Gemini.
+2025-12-04 21:52:08,787 - tef-writing-validator - INFO - Respuesta recibida de la API.
+2025-12-04 21:52:08,788 - tef-writing-validator - INFO - Evaluación completada. Modo: deteccion_automatica, Nivel Detectado: B1

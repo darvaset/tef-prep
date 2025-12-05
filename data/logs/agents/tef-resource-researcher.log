@@ -203,3 +203,28 @@
 2025-12-04 20:36:28,686 - tef-resource-researcher - INFO - Iniciando investigación para 'connecteurs logiques simples français' (Nivel: A2, Competencia: expression écrite).
 2025-12-04 20:36:28,686 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés connecteurs logiques simples français A2 expression écrite'
 2025-12-04 20:36:29,047 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 21:52:14,123 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:14,124 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:14,125 - tef-resource-researcher - INFO - Iniciando investigación para 'expression de la plainte formelle' (Nivel: B1, Competencia: expression écrite).
+2025-12-04 21:52:14,125 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés expression de la plainte formelle B1 expression écrite'
+2025-12-04 21:52:14,654 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 1 resultados.
+2025-12-04 21:52:14,660 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:14,660 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:14,660 - tef-resource-researcher - INFO - Iniciando investigación para 'vocabulaire technique électroménager' (Nivel: B1, Competencia: vocabulaire).
+2025-12-04 21:52:14,660 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés vocabulaire technique électroménager B1 vocabulaire'
+2025-12-04 21:52:15,241 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 4 resultados.
+2025-12-04 21:52:15,247 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:15,247 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:15,247 - tef-resource-researcher - INFO - Iniciando investigación para 'accord verbe sujet exercices' (Nivel: B1, Competencia: grammaire).
+2025-12-04 21:52:15,247 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés accord verbe sujet exercices B1 grammaire'
+2025-12-04 21:52:15,623 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 21:52:15,629 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:15,630 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:15,630 - tef-resource-researcher - INFO - Iniciando investigación para 'usage prépositions concernant à propos de' (Nivel: B1, Competencia: grammaire).
+2025-12-04 21:52:15,630 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés usage prépositions concernant à propos de B1 grammaire'
+2025-12-04 21:52:16,058 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.
+2025-12-04 21:52:16,064 - tef-resource-researcher - INFO - Cliente de Google Custom Search API configurado.
+2025-12-04 21:52:16,064 - tef-resource-researcher - INFO - TEF Resource Researcher inicializado correctamente.
+2025-12-04 21:52:16,064 - tef-resource-researcher - INFO - Iniciando investigación para 'conditionnel présent pour souhaiter' (Nivel: B1, Competencia: grammaire).
+2025-12-04 21:52:16,064 - tef-resource-researcher - INFO - Realizando búsqueda con la consulta: 'francés conditionnel présent pour souhaiter B1 grammaire'
+2025-12-04 21:52:16,398 - tef-resource-researcher - INFO - Investigación completada. Se encontraron 5 resultados.

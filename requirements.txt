@@ -1,1 +1,9 @@
--e ./core
+# Core dependencies
+google-generativeai>=0.3.0
+python-dotenv>=1.0.0
+
+# Streamlit UI
+streamlit>=1.28.0
+
+# Development
+pytest>=7.0.0

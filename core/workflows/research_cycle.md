@@ -37,9 +37,9 @@ Workflow especializado en investigar recursos educativos para temas específicos
 - `resource_types`: Tipos preferidos (video, ejercicio, guía)
 
 ## Outputs Generados
-- `{topic}_{level}_resources.json`: Lista curada de recursos
-- `{topic}_search_log.txt`: Log detallado de búsqueda
-- `knowledge_base_updates.json`: Sugerencias para KB
+- `data/outputs/resources/{topic}_{level}_resources.json`: Lista curada de recursos
+- `data/logs/workflows/{topic}_search_log.txt`: Log detallado de búsqueda
+- `data/outputs/{topic}_knowledge_base_updates.json`: Sugerencias para KB
 
 ## Criterios de Búsqueda
 - Especificidad para nivel TEF solicitado
@@ -51,5 +51,5 @@ Workflow especializado en investigar recursos educativos para temas específicos
 ## Ejemplo de Uso
 
 ```bash
-python tef_system.py research   --topic="subjonctif"   --level="B2"   --competency="writing"   --resource-types="ejercicio,guía"
+python -m core.tef_system research   --topic="subjonctif"   --level="B2"   --competency="writing"   --resource-types="ejercicio,guía"
 ```

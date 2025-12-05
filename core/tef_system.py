@@ -37,7 +37,7 @@ class TEFSystem:
         
     def setup_paths(self):
         """Configura las rutas del sistema"""
-        self.base_path = Path(".")
+        self.base_path = Path(__file__).parent.parent  # Raíz del proyecto
         self.agents_path = self.base_path / "core" / "agents"
         self.inputs_path = self.base_path / "data" / "inputs"
         self.outputs_path = self.base_path / "data" / "outputs"
@@ -340,6 +340,109 @@ class TEFSystem:
             return {"status": "error", "message": f"Error: El archivo de feedback '{feedback_file}' no es un JSON válido."}
         except Exception as e:
             return {"status": "error", "message": f"Error inesperado en el flujo de mejora: {e}"}
+
+    def full_pipeline(self, text: str, exercise_type: str = None, mode: str = "normal") -> dict:
+        """
+        Pipeline completo para UI: evaluar → plan → recursos
+        
+        A diferencia de los comandos CLI que trabajan con archivos,
+        este método trabaja con strings en memoria para integración con UI.
+        
+        Args:
+            text: Texto del estudiante (string directo)
+            exercise_type: Tipo de ejercicio (carta formal, informal, artículo)
+            mode: Modo del plan de estudio ("normal" o "intensive")
+        
+        Returns:
+            {
+                "status": "success" | "error",
+                "message": str (si error),
+                
+                # Datos de evaluación
+                "nivel_detectado": "A2",
+                "nivel_objetivo": "B1", 
+                "score_global": 45,
+                "feedback": { ... evaluación completa del validator ... },
+                
+                # Plan de mejora
+                "study_plan": "... markdown del plan ...",
+                
+                # Recursos (ya incluidos en study_plan, pero también por separado)
+                "resources": [
+                    {"topic": "...", "competency": "...", "links": [...]}
+                ]
+            }
+        """
+        try:
+            # 1. Validar input
+            if not text or not text.strip():
+                return {"status": "error", "message": "El texto está vacío"}
+            
+            # 2. Ejecutar Validator (sin guardar archivo)
+            print("🔍 Paso 1/3: Evaluando texto...")
+            validator = TEFWritingValidator(config=self.config["agents"]["tef-writing-validator"])
+            feedback = validator.evaluate(
+                student_text=text,
+                student_level=None,  # Detección automática
+                target_level=None
+            )
+            
+            if feedback.get("error"):
+                return {"status": "error", "message": feedback.get("message", "Error en evaluación")}
+            
+            # 3. Ejecutar Advisor
+            print("📚 Paso 2/3: Generando plan de mejora...")
+            advisor = TEFImprovementAdvisor(config=self.config["agents"]["tef-improvement-advisor"])
+            plan_result = advisor.generate_plan(feedback, mode)
+            
+            if plan_result.get("status") == "error":
+                return {"status": "error", "message": plan_result.get("message", "Error generando plan")}
+            
+            plan_content = plan_result.get("plan", "")
+            
+            # 4. Extraer temas y buscar recursos
+            print("🔗 Paso 3/3: Buscando recursos...")
+            research_topics = self._parse_research_topics(plan_content)
+            collected_resources = []
+            
+            # Limpiar el bloque YAML del plan
+            plan_content = re.sub(r"```yaml.*?```", "", plan_content, flags=re.DOTALL).strip()
+            
+            if research_topics:
+                for topic_data in research_topics:
+                    research_result = self.research_resources(
+                        topic=topic_data['topic'],
+                        level=topic_data['level'],
+                        competency=topic_data['competency']
+                    )
+                    collected_resources.append({
+                        "topic": topic_data['topic'],
+                        "level": topic_data['level'],
+                        "competency": topic_data['competency'],
+                        "links": research_result.get("results", [])
+                    })
+                
+                # Añadir recursos al plan
+                resources_markdown = self._format_resources_for_markdown([
+                    {"topic_info": t, "results": t.get("links", [])} 
+                    for t in collected_resources
+                ])
+                plan_content += resources_markdown
+            
+            # 5. Construir respuesta consolidada
+            return {
+                "status": "success",
+                "nivel_detectado": feedback.get("nivel_detectado", "N/A"),
+                "nivel_objetivo": feedback.get("nivel_objetivo", "N/A"),
+                "score_global": feedback.get("puntuacion_global", 0),
+                "feedback": feedback,
+                "study_plan": plan_content,
+                "resources": collected_resources,
+                "mode": mode
+            }
+            
+        except Exception as e:
+            return {"status": "error", "message": f"Error en pipeline: {str(e)}"}
 
     def _parse_research_topics(self, plan_content: str) -> list:
         """Extrae y parsea el bloque YAML de temas para investigar."""

@@ -1,0 +1,46 @@
+{
+  "modo_evaluacion": "deteccion_automatica",
+  "nivel_detectado": "A2",
+  "nivel_objetivo": "B1",
+  "nivel_evaluado": "B1",
+  "puntuacion_global": 58,
+  "competencias": {
+    "respeto_consigna": 22,
+    "correccion_linguistica": 15,
+    "riqueza_lengua": 13,
+    "organizacion_coherencia": 18
+  },
+  "puntos_fuertes": [
+    "El estudiante ha comprendido y respondido adecuadamente a la consigna de escribir un mensaje a un amigo describiendo sus vacaciones.",
+    "La estructura del mensaje es clara y sigue una progresión lógica.",
+    "Se utilizan formas verbales básicas del pasado (passé composé) correctamente para narrar los eventos.",
+    "El registro es apropiado para un mensaje informal entre amigos."
+  ],
+  "areas_mejora": [
+    "La corrección lingüística presenta errores que limitan la fluidez y la precisión.",
+    "El vocabulario, aunque adecuado para la situación, es repetitivo y carece de matices.",
+    "La construcción de algunas frases es simplista y podría enriquecerse con estructuras más complejas."
+  ],
+  "errores_frecuentes": [
+    "Concordancia género/número: 'mes vacances était super' (debería ser 'étaient super'), 'le hotel était très joli' (debería ser 'l'hôtel était très joli' y 'joli' concuerda con 'hôtel'), 'le personnel très amable' (debería ser 'aimable').",
+    "Uso incorrecto de preposiciones/artículos: 'nager dans la mer' (correcto), pero a veces se omiten o usan incorrectamente en otras construcciones.",
+    "Ortografía: 'delicieux' (debería ser 'délicieux')."
+  ],
+  "recomendaciones": [
+    "Practicar activamente la concordancia de género y número en adjetivos y participios pasados.",
+    "Estudiar y practicar el uso de artículos definidos, indefinidos y partitivos.",
+    "Ampliar el vocabulario relacionado con viajes, ocio y descripciones, utilizando sinónimos y expresiones más variadas.",
+    "Intentar construir frases más complejas combinando ideas con conjunciones simples.",
+    "Revisar el texto prestando especial atención a los errores de ortografía y concordancia."
+  ],
+  "brecha_nivel": {
+    "desde": "A2",
+    "hasta": "B1",
+    "areas_criticas": [
+      "Corrección lingüística (concordancia, preposiciones)",
+      "Vocabulario más rico y preciso",
+      "Construcción de frases más elaboradas"
+    ]
+  },
+  "siguiente_paso": "Para pasar de A2 a B1, el foco debe estar en consolidar la corrección gramatical, especialmente en la concordancia y el uso de artículos y preposiciones. Paralelamente, es fundamental enriquecer el vocabulario y comenzar a utilizar estructuras de frase ligeramente más complejas para expresar ideas de forma más matizada."
+}

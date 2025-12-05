@@ -86,8 +86,27 @@ Crear un sistema completo de preparación TEF que automatice el proceso de evalu
 - [ ] Actualización continua de la knowledge base
 
 **Entregables Fase 3**:
-- ✅ TEF Resource Researcher funcional
 - ✅ Sistema completo de 3 agentes operativos e integrados en el flujo `improve`
+
+---
+
+## 🎯 FASE 3.5: MVP & Validación de Mercado
+**Objetivo**: Lanzar versión mínima para validar demanda real
+**Duración Estimada**: 1-2 semanas
+**Estado**: 🔄 En Progreso
+
+### ✅ Completadas
+- [x] Reorganización a estructura monorepo
+- [x] Implementación de `full_pipeline()` para UI
+- [x] Streamlit MVP básico funcional
+- [x] Detección automática de nivel
+- [x] Modos de estudio Normal/Intensivo
+- [x] Integración automática de recursos en planes
+
+### 📋 Pendientes
+- [ ] Deploy en Streamlit Cloud
+- [ ] Testing con beta testers
+- [ ] Mejoras de UI basadas en feedback
 
 ---
 
@@ -97,6 +116,11 @@ Crear un sistema completo de preparación TEF que automatice el proceso de evalu
 **Estado**: ⏳ Por Iniciar
 
 ### 🎯 Objetivos
+- [ ] Feedback Multi-idioma (ES/FR/EN)
+- [ ] Caching inteligente de recursos
+- [ ] Texto corregido (Premium)
+- [ ] Sistema de tiers (Free/Premium)
+- [ ] PDF Export
 - [ ] **Optimización de Performance**
   - [ ] Paralelización de agentes
   - [ ] Cache inteligente de evaluaciones similares
@@ -228,6 +252,6 @@ Semanas 19-20: Testing final y documentación
 
 ---
 
-**Última actualización**: Diciembre 03, 2025  
+**Última actualización**: Diciembre 04, 2025  
 **Mantenido por**: Diego | QA Engineering Manager  
 **Próxima revisión**: Cada milestone completado

@@ -1,0 +1,43 @@
+{
+  "modo_evaluacion": "deteccion_automatica",
+  "nivel_detectado": "A2",
+  "nivel_objetivo": "B1",
+  "nivel_evaluado": "B1",
+  "puntuacion_global": 55,
+  "competencias": {
+    "respeto_consigna": 23,
+    "correccion_linguistica": 12,
+    "riqueza_lengua": 10,
+    "organizacion_coherencia": 10
+  },
+  "puntos_fuertes": [
+    "El saludo y despedida son apropiados para un mensaje informal.",
+    "Se mencionan actividades concretas realizadas durante las vacaciones.",
+    "La intención de invitar al amigo a futuras vacaciones es clara."
+  ],
+  "areas_mejora": [
+    "El uso inconsistente de los tiempos verbales (imperfecto/passé composé).",
+    "La falta de adjetivos más variados y precisos.",
+    "La construcción de frases es a menudo muy simple y directa."
+  ],
+  "errores_frecuentes": [
+    "Concordancia de género y número (ej. 'mes vacances était super' en lugar de 'étaient super').",
+    "Uso incorrecto de artículos.",
+    "Errores de preposición (implícito en la falta de uso adecuado de algunas)."
+  ],
+  "recomendaciones": [
+    "Repasar la conjugación de los verbos en passé composé y en imparfait, prestando atención a la concordancia de los participios pasados.",
+    "Ampliar el vocabulario relacionado con viajes, actividades y descripciones de lugares y personas.",
+    "Practicar la construcción de frases más complejas utilizando conectores simples y diferentes estructuras gramaticales."
+  ],
+  "brecha_nivel": {
+    "desde": "A2",
+    "hasta": "B1",
+    "areas_criticas": [
+      "Corrección lingüística (principalmente concordancia y tiempos verbales)",
+      "Riqueza del vocabulario",
+      "Complejidad de la estructura de las frases"
+    ]
+  },
+  "siguiente_paso": "Para pasar de A2 a B1, el foco debe estar en consolidar la corrección gramatical, especialmente en la concordancia de verbos y sustantivos, y en empezar a utilizar un vocabulario más amplio y preciso, así como estructuras de frase más variadas."
+}
