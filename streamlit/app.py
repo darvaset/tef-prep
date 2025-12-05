@@ -77,4 +77,4 @@ if st.button("✨ Evaluate My Text", type="primary", use_container_width=True):
 
 # Footer
 st.markdown("---")
-st.markdown("*Built with Claude & Gemini for TEF exam preparation*")
+st.markdown("*Built for TEF exam preparation*")
