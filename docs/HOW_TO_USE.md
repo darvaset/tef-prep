@@ -17,10 +17,10 @@ A continuación se detallan los comandos que están implementados y listos para 
 **Uso:**
 ```bash
 # Modo Detección Automática
-python tef_system.py evaluate --input RUTA_AL_ARCHIVO
+python -m core.tef_system evaluate --input RUTA_AL_ARCHIVO
 
 # Modo Evaluación contra Objetivo
-python tef_system.py evaluate --input RUTA_AL_ARCHIVO --level NIVEL_OBJETIVO
+python -m core.tef_system evaluate --input RUTA_AL_ARCHIVO --level NIVEL_OBJETIVO
 ```
 
 **Argumentos:**
@@ -29,16 +29,16 @@ python tef_system.py evaluate --input RUTA_AL_ARCHIVO --level NIVEL_OBJETIVO
 
 **Ejemplo (Detección Automática):**
 ```bash
-python tef_system.py evaluate --input="inputs/student_writings/texto1_a2.txt"
+python -m core.tef_system evaluate --input="data/inputs/student_writings/texto1_a2.txt"
 ```
 
 **Ejemplo (Evaluación contra Objetivo):**
 ```bash
-python tef_system.py evaluate --input="inputs/student_writings/texto1_a2.txt" --level="B1"
+python -m core.tef_system evaluate --input="data/inputs/student_writings/texto1_a2.txt" --level="B1"
 ```
 
 **Resultado:**
-Genera un archivo JSON en la carpeta `outputs/feedback/` con una evaluación detallada, que incluye el modo de evaluación, el nivel detectado, el nivel objetivo y un análisis de la brecha de competencias.
+Genera un archivo JSON en la carpeta `data/outputs/feedback/` con una evaluación detallada, que incluye el modo de evaluación, el nivel detectado, el nivel objetivo y un análisis de la brecha de competencias.
 
 ---
 
@@ -48,7 +48,7 @@ Genera un archivo JSON en la carpeta `outputs/feedback/` con una evaluación det
 
 **Uso:**
 ```bash
-python tef_system.py research --topic TEMA --level NIVEL --competency COMPETENCIA
+python -m core.tef_system research --topic TEMA --level NIVEL --competency COMPETENCIA
 ```
 
 **Argumentos:**
@@ -58,7 +58,7 @@ python tef_system.py research --topic TEMA --level NIVEL --competency COMPETENCI
 
 **Ejemplo:**
 ```bash
-python tef_system.py research --topic="subjonctif" --level="B2" --competency="grammaire"
+python -m core.tef_system research --topic="subjonctif" --level="B2" --competency="grammaire"
 ```
 
 **Resultado:**
@@ -72,7 +72,7 @@ El comando imprime en la consola una lista de hasta 10 URLs de recursos de alta 
 
 **Uso:**
 ```bash
-python tef_system.py improve --feedback RUTA_AL_FEEDBACK.json [--mode MODO]
+python -m core.tef_system improve --feedback RUTA_AL_FEEDBACK.json [--mode MODO]
 ```
 
 **Argumentos:**
@@ -81,13 +81,13 @@ python tef_system.py improve --feedback RUTA_AL_FEEDBACK.json [--mode MODO]
 
 **Ejemplo (Modo Normal):**
 ```bash
-python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json"
+python -m core.tef_system improve --feedback="data/outputs/feedback/mi_feedback.json"
 ```
 
 **Ejemplo (Modo Intensivo):**
 ```bash
-python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json" --mode="intensive"
+python -m core.tef_system improve --feedback="data/outputs/feedback/mi_feedback.json" --mode="intensive"
 ```
 
 **Resultado:**
-Genera un archivo Markdown (`.md`) con un plan de estudio detallado de 3 semanas en `outputs/study_plans/`. La cantidad de actividades y la intensidad del plan variarán según el modo seleccionado. El archivo final también incluirá una sección `## 📚 Recursos Recomendados` con enlaces relevantes.
+Genera un archivo Markdown (`.md`) con un plan de estudio detallado de 3 semanas en `data/outputs/study_plans/`. La cantidad de actividades y la intensidad del plan variarán según el modo seleccionado. El archivo final también incluirá una sección `## 📚 Recursos Recomendados` con enlaces relevantes.

@@ -19,13 +19,13 @@ from datetime import datetime
 from dotenv import load_dotenv
 import re
 
-# Cargar variables de entorno desde config/.env
-load_dotenv(dotenv_path=Path('config/.env'))
+# Cargar variables de entorno desde core/config/.env
+load_dotenv(dotenv_path=Path('core/config/.env'))
 
 # Integración del nuevo agente
-from agents.tef_writing_validator import TEFWritingValidator
-from agents.tef_resource_researcher import TEFResourceResearcher
-from agents.tef_improvement_advisor import TEFImprovementAdvisor
+from core.agents.tef_writing_validator import TEFWritingValidator
+from core.agents.tef_resource_researcher import TEFResourceResearcher
+from core.agents.tef_improvement_advisor import TEFImprovementAdvisor
 
 
 class TEFSystem:
@@ -38,14 +38,14 @@ class TEFSystem:
     def setup_paths(self):
         """Configura las rutas del sistema"""
         self.base_path = Path(".")
-        self.agents_path = self.base_path / "agents"
-        self.inputs_path = self.base_path / "inputs"
-        self.outputs_path = self.base_path / "outputs"
-        self.logs_path = self.base_path / "logs"
+        self.agents_path = self.base_path / "core" / "agents"
+        self.inputs_path = self.base_path / "data" / "inputs"
+        self.outputs_path = self.base_path / "data" / "outputs"
+        self.logs_path = self.base_path / "data" / "logs"
         
     def load_config(self):
         """Carga la configuración del sistema"""
-        config_file = Path("config/system.json")
+        config_file = Path("core/config/system.json")
         
         if not config_file.exists():
             print("❌ Error: Archivo de configuración no encontrado.")
@@ -75,13 +75,13 @@ class TEFSystem:
             status["agents_configured"] = len(self.config.get("agents", {}))
         
         # Verificar directorios
-        required_dirs = ["agents", "workflows", "inputs", "outputs", "logs", "config"]
+        required_dirs = ["core/agents", "core/workflows", "data/inputs", "data/outputs", "data/logs", "core/config"]
         dirs_present = sum(1 for d in required_dirs if Path(d).exists())
         status["directories_present"] = dirs_present
         
         # Verificar agentes
         agent_dirs = ["tef-writing-validator", "tef-improvement-advisor", "tef-resource-researcher"]
-        agents_present = sum(1 for a in agent_dirs if (Path("agents") / a).exists())
+        agents_present = sum(1 for a in agent_dirs if (self.base_path / "core" / "agents" / a).exists())
         
         # Estado general
         status["system_initialized"] = dirs_present >= 5 and agents_present >= 3
@@ -306,8 +306,21 @@ class TEFSystem:
                 resources_markdown = self._format_resources_for_markdown(collected_resources)
                 plan_content += resources_markdown
 
-            base_name = Path(feedback_file).stem.replace("feedback_", "")
-            output_filename = f"{base_name}_study_plan.md"
+            # 1. Generate new timestamp
+            new_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            
+            # 2. Extract input_basename and detected_level
+            input_basename = "unknown"
+            match = re.search(r'\d{8}_\d{6}_feedback_(.*)', Path(feedback_file).stem)
+            if match:
+                input_basename = match.group(1)
+                
+            detected_level = feedback_data.get("nivel_detectado", "level-not-found").replace(" ", "-").lower()
+
+            # 3. Construct new filename
+            # Format: {YYYYMMDD_HHMMSS}_{input_basename}_{detected_level}_{mode}_study_plan.md
+            output_filename = f"{new_timestamp}_{input_basename}_{detected_level}_{mode}_study_plan.md"
+            
             output_file = self.outputs_path / "study_plans" / output_filename
             
             output_file.parent.mkdir(parents=True, exist_ok=True)
@@ -409,9 +422,9 @@ class TEFSystem:
         print(f"\n📋 Próximos Pasos de Desarrollo:")
         if not status["system_initialized"]:
             print("   1️⃣  Ejecutar: python init_project.py")
-            print("   2️⃣  Configurar API keys en config/.env")
+            print("   2️⃣  Configurar API keys en core/config/.env")
         else:
-            print("   1️⃣  Configurar API keys en config/.env")
+            print("   1️⃣  Configurar API keys en core/config/.env")
             print("   2️⃣  Implementar TEF Writing Validator (Fase 1)")
             print("   3️⃣  Poblar knowledge base con ejemplos TEF")
             print("   4️⃣  Testing con escritos reales")
@@ -434,11 +447,11 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Ejemplos de uso:
-  python tef_system.py status
-  python tef_system.py evaluate --input inputs/student_writings/example.txt --level B2
-  python tef_system.py improve --feedback outputs/feedback/20251202_feedback.json
-  python tef_system.py complete-evaluation --input example.txt --student-level B1 --target-level B2
-  python tef_system.py research --topic "subjonctif" --level B2
+  python -m core.tef_system status
+  python -m core.tef_system evaluate --input data/inputs/student_writings/example.txt --level B2
+  python -m core.tef_system improve --feedback data/outputs/feedback/20251202_feedback.json
+  python -m core.tef_system complete-evaluation --input example.txt --student-level B1 --target-level B2
+  python -m core.tef_system research --topic "subjonctif" --level B2
         """
     )
     

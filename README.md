@@ -55,31 +55,65 @@ El sistema opera mediante workflows que coordinan la interacción entre agentes:
 python init_project.py
 
 # Evaluar un escrito (modo detección automática)
-python tef_system.py evaluate --input="inputs/student_writings/mi_ensayo.txt"
+python -m core.tef_system evaluate --input="data/inputs/student_writings/mi_ensayo.txt"
 
 # Evaluar un escrito (modo objetivo específico)
-python tef_system.py evaluate --input="inputs/student_writings/mi_ensayo.txt" --level="B2"
+python -m core.tef_system evaluate --input="data/inputs/student_writings/mi_ensayo.txt" --level="B2"
 
 # Generar plan de mejora enriquecido (modo normal)
-python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json"
+python -m core.tef_system improve --feedback="data/outputs/feedback/mi_feedback.json"
 
 # Generar plan de mejora enriquecido (modo intensivo)
-python tef_system.py improve --feedback="outputs/feedback/mi_feedback.json" --mode="intensive"
+python -m core.tef_system improve --feedback="data/outputs/feedback/mi_feedback.json" --mode="intensive"
 
 # Investigar recursos para un tema específico (uso directo)
-python tef_system.py research --topic="subjuntivo" --level="B2"
+python -m core.tef_system research --topic="subjuntivo" --level="B2"
 ```
 
 ## 📁 Estructura del Proyecto
 
 ```
-tef-preparation-system/
-├── agents/                    # Configuración de agentes especializados
-├── workflows/                 # Definición de procesos automatizados
-├── inputs/                    # Archivos de entrada (escritos de estudiantes)
-├── outputs/                   # Resultados (feedback, planes, recursos)
-├── logs/                      # Registro de operaciones del sistema
-└── scripts/                   # Herramientas de utilidad y administración
+TEF-Prep/
+├── core/                    # El "cerebro" - lógica actual (PROTEGIDO)
+│   ├── agents/              # Mover de ./agents/
+│   ├── config/              # Mover de ./config/
+│   ├── scripts/             # Mover de ./scripts/
+│   ├── workflows/           # Mover de ./workflows/
+│   ├── tef_system.py        # Mover de ./tef_system.py
+│   ├── requirements.txt     # Core dependencies only
+│   └── __init__.py          # Nuevo - hacer exportable
+│
+├── api/                     # FastAPI wrapper (futuro)
+│   ├── main.py              # Placeholder
+│   ├── routes/
+│   └── requirements.txt
+│
+├── streamlit/               # MVP UI (próximo paso)
+│   ├── app.py               # Placeholder
+│   ├── components/
+│   └── requirements.txt
+│
+├── data/                    # Datos compartidos
+│   ├── inputs/              # Mover de ./inputs/
+│   ├── outputs/             # Mover de ./outputs/
+│   └── logs/                # Mover de ./logs/
+│
+├── tests/                   # Tests (mantener en raíz)
+│   ├── core/
+│   ├── api/
+│   └── streamlit/
+│
+├── docs/                    # Documentación
+│   ├── GEMINI_LOG.md
+│   ├── HOW_TO_USE.md
+│   ├── NEXT_STEPS.md
+│   ├── ROADMAP.md
+│   └── ARCHITECTURE.md      # Nuevo - describir la estructura
+│
+├── README.md                # Mantener en raíz
+├── requirements.txt         # Root deps (para dev completo)
+├── .gitignore
+└── pyproject.toml           # Opcional - para packaging futuro
 ```
 
 ## 🛠️ Tecnologías
@@ -100,7 +134,7 @@ tef-preparation-system/
 
 1. Clonar el repositorio
 2. Ejecutar el script de inicialización: `python init_project.py`
-3. Configurar API keys en `.env`
+3. Configurar API keys en `core/config/.env`
 4. Poblar la knowledge base con ejemplos y guías TEF
 
 ## 🎓 Casos de Uso

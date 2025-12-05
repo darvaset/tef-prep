@@ -48,7 +48,7 @@ class TEFWritingValidator:
         self.logger = logging.getLogger(self.agent_name)
         self.logger.setLevel(logging.INFO)
         
-        log_dir = Path("logs/agents")
+        log_dir = Path("data/logs/agents")
         log_dir.mkdir(parents=True, exist_ok=True)
         
         handler = logging.FileHandler(log_dir / f"{self.agent_name}.log", mode='a', encoding='utf-8')
@@ -61,7 +61,7 @@ class TEFWritingValidator:
     def _setup_gemini(self):
         """Configura el cliente de la API de Gemini."""
         try:
-            load_dotenv(dotenv_path=Path("config/.env"))
+            load_dotenv(dotenv_path=Path("core/config/.env"))
             api_key = os.getenv("GEMINI_API_KEY")
             if not api_key or api_key == "your_gemini_api_key_here":
                 self.logger.error("La API Key de Gemini no está configurada en config/.env")
@@ -75,7 +75,7 @@ class TEFWritingValidator:
 
     def _load_system_prompt(self) -> str:
         """Carga el system prompt desde el archivo .md."""
-        prompt_path = Path("agents") / self.agent_name / "system_prompt.md"
+        prompt_path = Path("core/agents") / self.agent_name / "system_prompt.md"
         try:
             with open(prompt_path, "r", encoding="utf-8") as f:
                 return f.read()
@@ -179,7 +179,7 @@ if __name__ == '__main__':
     
     # Cargar configuración del sistema
     try:
-        with open("config/system.json", "r", encoding="utf-8") as f:
+        with open("core/config/system.json", "r", encoding="utf-8") as f:
             full_config = json.load(f)
         agent_config = full_config["agents"]["tef-writing-validator"]
     except (FileNotFoundError, KeyError) as e:
@@ -191,12 +191,12 @@ if __name__ == '__main__':
         validator = TEFWritingValidator(config=agent_config)
     except ValueError as e:
         print(f"❌ Error de inicialización: {e}")
-        print("    Asegúrate de que tu GEMINI_API_KEY es correcta en config/.env")
+        print("    Asegúrate de que tu GEMINI_API_KEY es correcta en core/config/.env")
         exit(1)
     
     # Cargar texto de ejemplo
     try:
-        with open("inputs/student_writings/exemple_lettre_b2.txt", "r", encoding="utf-8") as f:
+        with open("data/inputs/student_writings/exemple_lettre_b2.txt", "r", encoding="utf-8") as f:
             sample_text = f.read()
     except FileNotFoundError:
         print("❌ Error: Archivo de texto de ejemplo no encontrado.")
@@ -220,6 +220,6 @@ if __name__ == '__main__':
     print(json.dumps(result, indent=2, ensure_ascii=False))
     print("="*50)
     
-    log_file = Path("logs/agents/tef-writing-validator.log")
+    log_file = Path("data/logs/agents/tef-writing-validator.log")
     if log_file.exists():
         print(f"\n📄 Log de la prueba disponible en: {log_file}")

@@ -1,0 +1,44 @@
+{
+  "modo_evaluacion": "deteccion_automatica",
+  "nivel_detectado": "A2",
+  "nivel_objetivo": "B1",
+  "nivel_evaluado": "B1",
+  "puntuacion_global": 58,
+  "competencias": {
+    "respeto_consigna": 22,
+    "correccion_linguistica": 12,
+    "riqueza_lengua": 12,
+    "organizacion_coherencia": 12
+  },
+  "puntos_fuertes": [
+    "La carta es amigable y cumple con el propósito comunicativo de compartir experiencias de vacaciones.",
+    "El registro es apropiado para un amigo.",
+    "La estructura básica de una carta informal está presente (saludo, cuerpo, despedida)."
+  ],
+  "areas_mejora": [
+    "Mayor uso de estructuras gramaticales más complejas (tiempos verbales, condicionales).",
+    "Ampliación del vocabulario, especialmente en la descripción de emociones y sensaciones.",
+    "Mejora en la precisión de la concordancia verbal y nominal."
+  ],
+  "errores_frecuentes": [
+    "Concordancia verbal incorrecta (ej. 'mes vacances était' en lugar de 'mes vacances étaient').",
+    "Uso de adjetivos sin concordancia (ej. 'personnel très amable' en lugar de 'personnel très aimable').",
+    "Errores en la elección de preposiciones y artículos."
+  ],
+  "recomendaciones": [
+    "Estudiar las reglas de concordancia entre sujeto y verbo, y entre sustantivo y adjetivo.",
+    "Practicar el uso de tiempos verbales pasados, especialmente el passé composé y l'imparfait, y empezar a introducir el plus-que-parfait.",
+    "Ampliar el vocabulario a través de la lectura y el uso de sinónimos y antónimos.",
+    "Integrar conectores para dar fluidez a las ideas."
+  ],
+  "brecha_nivel": {
+    "desde": "A2",
+    "hasta": "B1",
+    "areas_criticas": [
+      "Corrección lingüística (concordancia, conjugación)",
+      "Riqueza y precisión del vocabulario",
+      "Complejidad sintáctica básica"
+    ]
+  },
+  "siguiente_paso": "Para pasar de A2 a B1, el foco debe estar en consolidar la corrección gramatical, especialmente en las concordancias verbales y nominales, así como en empezar a utilizar un vocabulario más variado y expresiones propias del nivel B1."
+}

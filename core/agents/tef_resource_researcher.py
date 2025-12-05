@@ -47,7 +47,7 @@ class TEFResourceResearcher:
         self.logger = logging.getLogger(self.agent_name)
         self.logger.setLevel(logging.INFO)
         
-        log_dir = Path("logs/agents")
+        log_dir = Path("data/logs/agents")
         log_dir.mkdir(parents=True, exist_ok=True)
         
         handler = logging.FileHandler(log_dir / f"{self.agent_name}.log", mode='a', encoding='utf-8')
@@ -60,7 +60,7 @@ class TEFResourceResearcher:
     def _setup_search_api(self):
         """Configura el cliente de la API de búsqueda personalizada de Google."""
         try:
-            load_dotenv(dotenv_path=Path("config/.env"))
+            load_dotenv(dotenv_path=Path("core/config/.env"))
             self.api_key = os.getenv("SEARCH_API_KEY")
             self.cse_id = os.getenv("SEARCH_ENGINE_ID")
 
@@ -136,7 +136,7 @@ if __name__ == '__main__':
     
     # Cargar configuración del sistema
     try:
-        with open("config/system.json", "r", encoding="utf-8") as f:
+        with open("core/config/system.json", "r", encoding="utf-8") as f:
             full_config = json.load(f)
         agent_config = full_config["agents"]["tef-resource-researcher"]
     except (FileNotFoundError, KeyError) as e:
@@ -173,6 +173,6 @@ if __name__ == '__main__':
     print(json.dumps(result, indent=2, ensure_ascii=False))
     print("="*50)
     
-    log_file = Path("logs/agents/tef-resource-researcher.log")
+    log_file = Path("data/logs/agents/tef-resource-researcher.log")
     if log_file.exists():
         print(f"\n📄 Log de la prueba disponible en: {log_file}")
