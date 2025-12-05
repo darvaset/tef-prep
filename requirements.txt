@@ -1,4 +1,1 @@
-google-generativeai
-python-dotenv
-python-dotenv
-google-generativeai
+-e ./core
